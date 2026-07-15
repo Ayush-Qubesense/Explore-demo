@@ -1,0 +1,261 @@
+/* ==========================================================================
+ * OpsFlo — AI command palette
+ * Styled to sit inside the existing Frest navbar dropdown pattern (notifications /
+ * shortcuts).
+ *
+ * Theming: define our OWN tokens, keyed on the .light-style / .dark-style classes the
+ * theme switcher puts on <html>. Do NOT reach for --bs-tertiary-bg / --bs-secondary-bg:
+ * Frest overloads them with non-Bootstrap semantics and sets both to near-opaque WHITE
+ * in dark mode (--bs-tertiary-bg = rgba(255,255,255,.75)), so using them as backgrounds
+ * paints light-grey rows on a dark panel. Measured, not assumed.
+ *
+ * These ARE safe in both themes and are used directly below:
+ *   --bs-primary  --bs-body-bg  --bs-body-color  --bs-border-color
+ *   --bs-heading-color  --bs-secondary-color
+ * ========================================================================== */
+
+.light-style {
+  --cmdp-hover-bg: rgba(90, 141, 238, .10);
+  --cmdp-foot-bg: rgba(38, 60, 85, .04);
+  --cmdp-kbd-bg: rgba(38, 60, 85, .06);
+  --cmdp-chip-bg: rgba(234, 84, 85, .14);
+  --cmdp-row-hit-bg: rgba(90, 141, 238, .10);
+}
+.dark-style {
+  --cmdp-hover-bg: rgba(90, 141, 238, .20);
+  --cmdp-foot-bg: rgba(255, 255, 255, .03);
+  --cmdp-kbd-bg: rgba(255, 255, 255, .07);
+  --cmdp-chip-bg: rgba(234, 84, 85, .22);
+  --cmdp-row-hit-bg: rgba(90, 141, 238, .18);
+}
+
+#cmdPaletteMenu {
+  width: 420px;
+  max-width: calc(100vw - 2rem);
+  overflow: hidden;
+  /* Pin the right edge ourselves. We toggle .show directly instead of using
+     data-bs-toggle="dropdown" (Bootstrap's dropdown steals focus handling and closes
+     on clicks inside the menu), which means Popper never positions this and
+     .dropdown-menu-end never takes effect -- leaving a 420px panel to overflow the
+     viewport and clip its own footer. */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+}
+
+/* --------------------------------------------------------------- input row */
+.cmdp-head {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .625rem .875rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.cmdp-head-ico {
+  font-size: 1.15rem;
+  color: var(--bs-secondary-color);
+  flex-shrink: 0;
+}
+
+.cmdp-input.form-control {
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+  font-size: .9375rem;
+  /* !important is load-bearing, not laziness: core-dark.css ships
+     `input[readonly].form-control, input.form-control { background-color:#3b3b3b !important }`.
+     An author !important beats any specificity, so a plain `background: transparent`
+     loses and the input paints a grey slab inside the panel in dark mode. */
+  background-color: transparent !important;
+}
+.cmdp-input.form-control:focus { border: 0; box-shadow: none; }
+
+.cmdp-kbd {
+  flex-shrink: 0;
+  font-size: .65rem;
+  padding: .15rem .35rem;
+  border-radius: .25rem;
+  background: var(--cmdp-kbd-bg);
+  color: var(--bs-secondary-color);
+  border: 1px solid var(--bs-border-color);
+}
+
+/* mic (v2) — hidden entirely unless SpeechRecognition + secure context */
+.cmdp-mic {
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: var(--bs-secondary-color);
+  padding: .15rem .25rem;
+  border-radius: .25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.cmdp-mic:hover { color: var(--bs-primary); }
+.cmdp-mic.listening {
+  color: var(--bs-danger, #ea5455);
+  animation: cmdp-pulse 1.1s ease-in-out infinite;
+}
+@keyframes cmdp-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+/* ----------------------------------------------------------------- results */
+/* 380, not 320: the fullest suggestion state is 3 group headers + 3 example rows +
+   3 page rows ~= 327px. At 320 it scrolled as soon as a recent existed -- which a fresh
+   demo machine never shows, so it only appeared once the palette had been used. */
+.cmdp-results { max-height: 380px; overflow-y: auto; }
+
+.cmdp-item {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .5rem .875rem;
+  text-decoration: none;
+  color: var(--bs-body-color);
+  border-left: 2px solid transparent;
+}
+.cmdp-item.active {
+  background: var(--cmdp-hover-bg);
+  border-left-color: var(--bs-primary);
+}
+.cmdp-item-ico { font-size: 1.1rem; color: var(--bs-secondary-color); flex-shrink: 0; }
+.cmdp-item-body { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+.cmdp-item-title {
+  font-weight: 500;
+  font-size: .875rem;
+  color: var(--bs-heading-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cmdp-item.active .cmdp-item-title { color: var(--bs-primary); }
+.cmdp-item-sub { font-size: .75rem; color: var(--bs-secondary-color); }
+
+/* What the page is for. Sits below the section breadcrumb, quieter than it: the
+   hierarchy is title -> section -> description, so this must never compete with the
+   title for attention. One line only -- .cmdp-item-body is min-width:0, which is what
+   lets ellipsis work here instead of the row growing and shifting the ones below. */
+.cmdp-item-desc {
+  font-size: .7rem;
+  color: var(--bs-secondary-color);
+  opacity: .8;
+  margin-top: .1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmdp-chip {
+  display: inline-block;
+  font-size: .65rem;
+  padding: 0 .3rem;
+  border-radius: .2rem;
+  background: var(--cmdp-chip-bg);
+  color: var(--bs-danger, #ea5455);
+  vertical-align: middle;
+}
+
+/* Similarity score. Deliberately visible: in a demo it's the evidence that this is
+   ranked semantic matching and not a substring filter. */
+.cmdp-score {
+  flex-shrink: 0;
+  font-size: .65rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--bs-secondary-color);
+  opacity: .65;
+}
+
+.cmdp-empty {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .625rem .875rem;
+  font-size: .8125rem;
+  color: var(--bs-secondary-color);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+.cmdp-empty i { font-size: 1rem; flex-shrink: 0; }
+
+/* ------------------------------------------------- suggestions & name matches */
+
+/* Group header. Derived at render time from the flat rows array, so it costs the
+   keyboard path nothing. */
+.cmdp-group {
+  padding: .45rem .875rem .2rem;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
+  opacity: .7;
+}
+
+/* Example-query row ("Try asking"). Single-line and compact -- the 6-row empty state
+   has to fit the 320px results box without scrolling. */
+.cmdp-item-q { padding-top: .4rem; padding-bottom: .4rem; }
+.cmdp-item-q .cmdp-item-title { font-weight: 400; }
+.cmdp-item-q .cmdp-item-ico { color: var(--bs-primary); opacity: .8; }
+
+/* Name-lane hit: a deterministic id/title match, not a cosine. Shows the page ID where
+   a semantic hit shows its similarity -- printing a "score" on an exact match would be
+   meaningless and would undercut what .cmdp-score exists to prove. */
+.cmdp-badge {
+  flex-shrink: 0;
+  font-size: .65rem;
+  font-variant-numeric: tabular-nums;
+  padding: 0 .3rem;
+  border-radius: .2rem;
+  background: var(--cmdp-kbd-bg);
+  color: var(--bs-secondary-color);
+}
+
+/* -------------------------------------------------------------------- foot */
+.cmdp-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .4rem .875rem;
+  border-top: 1px solid var(--bs-border-color);
+  background: var(--cmdp-foot-bg);
+  font-size: .7rem;
+  color: var(--bs-secondary-color);
+}
+.cmdp-hint { display: flex; align-items: center; gap: .2rem; white-space: nowrap; }
+.cmdp-hint kbd {
+  background: var(--cmdp-kbd-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: .2rem;
+  padding: 0 .25rem;
+  font-size: .65rem;
+  color: inherit;
+}
+
+/* ------------------------------------------------- v1 deep-link highlighting */
+.cmdp-filter-note {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .875rem;
+  font-size: .8125rem;
+  border-bottom: 1px solid var(--bs-border-color);
+  background: var(--cmdp-hover-bg);
+  color: var(--bs-body-color);
+}
+.cmdp-filter-note i { color: var(--bs-primary); font-size: 1rem; }
+.cmdp-filter-clear {
+  margin-left: auto;
+  border: 1px solid var(--bs-border-color);
+  background: transparent;
+  color: inherit;
+  border-radius: .25rem;
+  font-size: .7rem;
+  padding: .1rem .45rem;
+  cursor: pointer;
+}
+.cmdp-filter-clear:hover { border-color: var(--bs-primary); color: var(--bs-primary); }
+
+tr.cmdp-row-hit > td { background: var(--cmdp-row-hit-bg) !important; }
+tr.cmdp-row-dim { opacity: .32; }

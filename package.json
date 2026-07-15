@@ -1,0 +1,21 @@
+{
+  "name": "opsflo-snapshots",
+  "version": "1.0.0",
+  "description": "OpsFlo demo snapshot site + AI command palette index generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "python build_snapshots.py && node generate_embeddings.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@xenova/transformers": "^2.17.2"
+  },
+  "private": true,
+  "devDependencies": {
+    "openai": "^6.47.0",
+    "puppeteer-core": "^23.11.1"
+  }
+}

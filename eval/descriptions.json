@@ -1,0 +1,251 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "pages": [
+  {
+   "id": "1352",
+   "title": "Customer Master",
+   "section": "Resource Setup",
+   "desc": "Manage customers by number, area, manager, terms, and status"
+  },
+  {
+   "id": "1354",
+   "title": "Warehouse / Yard Address",
+   "section": "Resource Setup",
+   "desc": "Maintain warehouse locations with address, city, state, zip, status"
+  },
+  {
+   "id": "1362",
+   "title": "Vehicle / Truck Master",
+   "section": "Resource Setup",
+   "desc": "Track vehicles by unit, type, make, plate, facility, status"
+  },
+  {
+   "id": "1363",
+   "title": "Equipment / Trailer Master",
+   "section": "Resource Setup",
+   "desc": "Record equipment and trailers by unit, type, make, model, facility, status"
+  },
+  {
+   "id": "1455",
+   "title": "Field Service",
+   "section": "Ticketing",
+   "desc": "Log field service tickets with customer, job type, lease, tech, date, status"
+  },
+  {
+   "id": "1580",
+   "title": "Document Module Configuration",
+   "section": "Documents",
+   "desc": "Configure document modules by category, template, requirement, update, and status"
+  },
+  {
+   "id": "1590c",
+   "title": "Customer Certifications",
+   "section": "Training",
+   "desc": "Track customer certifications, issue and expiry dates, owner, and status"
+  },
+  {
+   "id": "1590e",
+   "title": "Equipment Certifications",
+   "section": "Safety",
+   "desc": "Record equipment certifications with issue, expiry, inspector, and status"
+  },
+  {
+   "id": "1590g",
+   "title": "General Certifications",
+   "section": "Safety",
+   "desc": "Track employee certifications, issue dates, expirations, and status"
+  },
+  {
+   "id": "1600",
+   "title": "Labor Scheduler",
+   "section": "Operations",
+   "desc": "Schedule employees by role, shift, facility, and status"
+  },
+  {
+   "id": "1601",
+   "title": "Predictive Maintenance",
+   "section": "Maintenance",
+   "desc": "View equipment health trends and upcoming maintenance predictions"
+  },
+  {
+   "id": "1602",
+   "title": "Certificate Expiration Tracker",
+   "section": "Documents",
+   "desc": "Monitor document certificates, owners, categories, and expiration status"
+  },
+  {
+   "id": "1614",
+   "title": "Facilities Setup",
+   "section": "Resource Setup",
+   "desc": "Configure facility details, type, location, manager, and status"
+  },
+  {
+   "id": "1626",
+   "title": "Gas Monitors",
+   "section": "Safety",
+   "desc": "Track gas monitors, models, assignments, calibrations, and status"
+  },
+  {
+   "id": "1674",
+   "title": "Expenses",
+   "section": "Accounting",
+   "desc": "Record expenses by employee, category, date, amount, and status"
+  },
+  {
+   "id": "1676",
+   "title": "Payroll",
+   "section": "Accounting",
+   "desc": "Process payroll with employee hours, pay period, and gross pay"
+  },
+  {
+   "id": "1685",
+   "title": "JSAs",
+   "section": "Safety",
+   "desc": "Review JSA records by task, facility, and status"
+  },
+  {
+   "id": "1686",
+   "title": "Utilization",
+   "section": "Operations",
+   "desc": "Monitor overall resource utilization across operations"
+  },
+  {
+   "id": "1699",
+   "title": "Time Card Audit",
+   "section": "Accounting",
+   "desc": "Audit employee time cards by date and status"
+  },
+  {
+   "id": "1701",
+   "title": "Notifications",
+   "section": "Operations",
+   "desc": "View notifications by type, related job, and status"
+  },
+  {
+   "id": "1702",
+   "title": "Activity Map",
+   "section": "Operations",
+   "desc": "Explore field activity locations on interactive map"
+  },
+  {
+   "id": "1708",
+   "title": "Account Managers Setup",
+   "section": "Resource Setup",
+   "desc": "Configure account manager profiles with contact and region details"
+  },
+  {
+   "id": "1712",
+   "title": "Operation Areas Setup",
+   "section": "Resource Setup",
+   "desc": "Define operation areas with facilities, supervisors, and well counts"
+  },
+  {
+   "id": "1728",
+   "title": "Deployments / Arrivals",
+   "section": "Operations",
+   "desc": "Track vehicle deployments and arrivals by job and schedule"
+  },
+  {
+   "id": "1750",
+   "title": "Planner",
+   "section": "Operations",
+   "desc": "Plan and organize upcoming operations tasks"
+  },
+  {
+   "id": "1769",
+   "title": "Incident Reports",
+   "section": "Safety",
+   "desc": "Review incident reports by type, facility, and severity"
+  },
+  {
+   "id": "1770",
+   "title": "Accounting Dashboard",
+   "section": "Accounting",
+   "desc": "Monitor key accounting metrics and financial performance"
+  },
+  {
+   "id": "1783",
+   "title": "Maintenance",
+   "section": "Maintenance",
+   "desc": "Track maintenance work orders by asset, type, and due date"
+  },
+  {
+   "id": "1788",
+   "title": "Dispatch Agent",
+   "section": "Operations",
+   "desc": "Assign dispatch agents to jobs with priority and status"
+  },
+  {
+   "id": "1789",
+   "title": "Maintenance Due List",
+   "section": "Maintenance",
+   "desc": "View upcoming maintenance services by asset and due date"
+  },
+  {
+   "id": "1794",
+   "title": "Field Tech Tracker Report",
+   "section": "Operations",
+   "desc": "Track field technicians’ locations, vehicles, and job status"
+  },
+  {
+   "id": "1796",
+   "title": "Check List Report 1",
+   "section": "Reports",
+   "desc": "Review checklist completions, scores, and status per job"
+  },
+  {
+   "id": "1799",
+   "title": "Check List Report 2",
+   "section": "Reports",
+   "desc": "Review checklist results by job, technician, and score"
+  },
+  {
+   "id": "1800",
+   "title": "Check List Report 3",
+   "section": "Reports",
+   "desc": "Analyze checklist completion and scores per job"
+  },
+  {
+   "id": "1801",
+   "title": "Check List Report 4",
+   "section": "Reports",
+   "desc": "Track checklist status and scores across jobs"
+  },
+  {
+   "id": "1806",
+   "title": "ERP Inventory Report",
+   "section": "Reports",
+   "desc": "Monitor inventory levels by SKU, warehouse, and reorder point"
+  },
+  {
+   "id": "2809",
+   "title": "Invoicing",
+   "section": "Accounting",
+   "desc": "Generate and track invoices by customer, job, and date"
+  },
+  {
+   "id": "2866",
+   "title": "Receiver",
+   "section": "Ticketing",
+   "desc": "Record received shipments by receipt, customer, and date"
+  },
+  {
+   "id": "2868",
+   "title": "Shipper",
+   "section": "Ticketing",
+   "desc": "Create shipment orders by customer, origin, and destination"
+  },
+  {
+   "id": "2870",
+   "title": "Intercompany Shipper",
+   "section": "Ticketing",
+   "desc": "Manage intercompany shipments by company, item, and ship date"
+  },
+  {
+   "id": "2872",
+   "title": "Intercompany Receiver",
+   "section": "Ticketing",
+   "desc": "Track intercompany receipts by source, destination, item, and status"
+  }
+ ]
+}

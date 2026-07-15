@@ -1,0 +1,21 @@
+{
+ "defaults": [
+  "1750",
+  "1455",
+  "2809"
+ ],
+ "examples": [
+  {
+   "q": "who is late",
+   "expect": "1728"
+  },
+  {
+   "q": "overdue invoices",
+   "expect": "2809"
+  },
+  {
+   "q": "expired certifications",
+   "expect": "1590g"
+  }
+ ]
+}

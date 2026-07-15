@@ -1,0 +1,788 @@
+{
+ "provider": "https://api.groq.com/openai/v1",
+ "model": "openai/gpt-oss-120b",
+ "n": 12,
+ "generated_at": "2026-07-15T10:58:33.193Z",
+ "complete": true,
+ "pages": [
+  {
+   "id": "1352",
+   "title": "Customer Master",
+   "section": "Resource Setup",
+   "queries": [
+    "add new customer",
+    "edit customer info",
+    "search customer list",
+    "view customer details",
+    "customer lookup",
+    "create customer record",
+    "update customer address",
+    "find customer by name",
+    "list all customers",
+    "customer master page",
+    "open customer master",
+    "customer profile"
+   ]
+  },
+  {
+   "id": "1354",
+   "title": "Warehouse / Yard Address",
+   "section": "Resource Setup",
+   "queries": [
+    "add warehouse address",
+    "edit yard location",
+    "warehouse address list",
+    "view yard address",
+    "search warehouse",
+    "setup new yard",
+    "update warehouse info",
+    "list all warehouse addresses",
+    "warehouse address master",
+    "open warehouse address page",
+    "find yard address",
+    "where is our yard"
+   ]
+  },
+  {
+   "id": "1362",
+   "title": "Vehicle / Truck Master",
+   "section": "Resource Setup",
+   "queries": [
+    "add new truck",
+    "edit truck details",
+    "list vehicles",
+    "search vehicle by plate",
+    "update truck info",
+    "view truck list",
+    "create vehicle record",
+    "truck master",
+    "open vehicle master",
+    "find my trucks",
+    "lookup vehicle",
+    "vehicle master page"
+   ]
+  },
+  {
+   "id": "1363",
+   "title": "Equipment / Trailer Master",
+   "section": "Resource Setup",
+   "queries": [
+    "add trailer",
+    "edit trailer info",
+    "list equipment",
+    "search equipment by serial",
+    "update trailer details",
+    "view equipment list",
+    "create equipment record",
+    "trailer master",
+    "open equipment master",
+    "find my trailers",
+    "lookup equipment",
+    "equipment master page"
+   ]
+  },
+  {
+   "id": "1455",
+   "title": "Field Service",
+   "section": "Ticketing",
+   "queries": [
+    "create field service request",
+    "open field service ticket",
+    "view field service tickets",
+    "search field service",
+    "field service dashboard",
+    "new field service ticket",
+    "field service work orders",
+    "list field service",
+    "field service page",
+    "access field service",
+    "field service tickets list",
+    "manage field service tickets"
+   ]
+  },
+  {
+   "id": "1580",
+   "title": "Document Module Configuration",
+   "section": "Documents",
+   "queries": [
+    "configure document module",
+    "document module settings",
+    "setup docs module",
+    "edit document config",
+    "document module setup",
+    "open doc module config",
+    "doc module page",
+    "change document defaults",
+    "document config screen",
+    "manage document module",
+    "doc module options",
+    "adjust document settings"
+   ]
+  },
+  {
+   "id": "1590c",
+   "title": "Customer Certifications",
+   "section": "Training",
+   "queries": [
+    "customer certifications list",
+    "view customer certs",
+    "add customer certification",
+    "customer training records",
+    "search customer cert",
+    "customer cert management",
+    "update customer certification",
+    "customer certification page",
+    "open customer certs",
+    "customer safety certificates",
+    "customer certs lookup",
+    "manage customer certifications"
+   ]
+  },
+  {
+   "id": "1590e",
+   "title": "Equipment Certifications",
+   "section": "Safety",
+   "queries": [
+    "equipment certifications list",
+    "view equipment certs",
+    "add equipment certification",
+    "equipment safety records",
+    "search equipment cert",
+    "equipment cert management",
+    "update equipment certification",
+    "equipment certification page",
+    "open equipment certs",
+    "equipment safety certificates",
+    "equipment certs lookup",
+    "manage equipment certifications"
+   ]
+  },
+  {
+   "id": "1590g",
+   "title": "General Certifications",
+   "section": "Safety",
+   "queries": [
+    "view all general safety certs",
+    "which crew have general certifications",
+    "list expired general certifications",
+    "add new general certification",
+    "search general cert by employee",
+    "how many general certs are due soon",
+    "update a general certification record",
+    "see general cert status dashboard",
+    "need to renew general safety certs",
+    "filter general certifications by department",
+    "what are the required general certs",
+    "general certifications page"
+   ]
+  },
+  {
+   "id": "1600",
+   "title": "Labor Scheduler",
+   "section": "Operations",
+   "queries": [
+    "schedule labor shifts",
+    "assign crew to job next week",
+    "view labor scheduler calendar",
+    "edit worker schedule for tomorrow",
+    "who is scheduled for day shift",
+    "copy labor schedule to next week",
+    "need to balance overtime in scheduler",
+    "show unassigned labor slots",
+    "how many hours each employee has this week",
+    "move tech from morning to afternoon shift",
+    "labor scheduler report",
+    "labor scheduler"
+   ]
+  },
+  {
+   "id": "1601",
+   "title": "Predictive Maintenance",
+   "section": "Maintenance",
+   "queries": [
+    "run predictive maintenance analysis",
+    "which assets need maintenance soon",
+    "schedule predictive maintenance tasks",
+    "view predictive maintenance alerts",
+    "generate predictive maintenance report",
+    "set predictive maintenance thresholds",
+    "why is equipment flagged for predictive maintenance",
+    "add new asset to predictive maintenance",
+    "predictive maintenance dashboard",
+    "check upcoming predictive maintenance jobs",
+    "predictive maintenance page",
+    "how does predictive maintenance work"
+   ]
+  },
+  {
+   "id": "1602",
+   "title": "Certificate Expiration Tracker",
+   "section": "Documents",
+   "queries": [
+    "track certificate expirations",
+    "list certificates expiring this month",
+    "alert for upcoming cert expirations",
+    "filter certificates by expiration date",
+    "who has expired certificates",
+    "renew certificates nearing expiry",
+    "export certificate expiration report",
+    "view cert expiration timeline",
+    "certificate expiration tracker page",
+    "set reminder for cert expirations",
+    "how many certs expire next week",
+    "search certs by expiration"
+   ]
+  },
+  {
+   "id": "1614",
+   "title": "Facilities Setup",
+   "section": "Resource Setup",
+   "queries": [
+    "add new facility location",
+    "edit facility details",
+    "view facilities list",
+    "import facility data",
+    "delete a facility record",
+    "facility setup wizard",
+    "set facility operating hours",
+    "link facility to region",
+    "facilities setup page",
+    "how to create a facility",
+    "search facilities by name",
+    "assign manager to facility"
+   ]
+  },
+  {
+   "id": "1626",
+   "title": "Gas Monitors",
+   "section": "Safety",
+   "queries": [
+    "add gas monitor device",
+    "view gas monitor inventory",
+    "calibrate gas monitor",
+    "gas monitor alerts",
+    "which gas monitors need service",
+    "export gas monitor list",
+    "search gas monitor by serial",
+    "gas monitor setup page",
+    "check gas monitor battery status",
+    "replace faulty gas monitor",
+    "how many gas monitors are active",
+    "gas monitor dashboard"
+   ]
+  },
+  {
+   "id": "1674",
+   "title": "Expenses",
+   "section": "Accounting",
+   "queries": [
+    "submit new expense report",
+    "view pending expenses",
+    "approve expense entries",
+    "expense report summary this month",
+    "filter expenses by project",
+    "export expenses to excel",
+    "expense categories list",
+    "edit expense line item",
+    "expenses page",
+    "how to code an expense",
+    "search expenses by vendor",
+    "reconcile expenses with invoice"
+   ]
+  },
+  {
+   "id": "1676",
+   "title": "Payroll",
+   "section": "Accounting",
+   "queries": [
+    "run payroll for this pay period",
+    "view employee payroll details",
+    "edit payroll deductions",
+    "payroll summary report",
+    "approve payroll batch",
+    "export payroll data",
+    "payroll calendar next month",
+    "search payroll by employee",
+    "payroll page",
+    "how to add overtime to payroll",
+    "generate pay stubs",
+    "view payroll tax totals"
+   ]
+  },
+  {
+   "id": "1685",
+   "title": "JSAs",
+   "section": "Safety",
+   "queries": [
+    "jsa forms",
+    "job safety analysis",
+    "safety analysis checklist",
+    "create a new jsa",
+    "view jsa library",
+    "search jsa templates",
+    "edit jsa document",
+    "jsa compliance",
+    "how to fill out a jsa",
+    "jsa for field crew",
+    "jsa safety procedure",
+    "jsa upload"
+   ]
+  },
+  {
+   "id": "1686",
+   "title": "Utilization",
+   "section": "Operations",
+   "queries": [
+    "truck utilization report",
+    "driver utilization stats",
+    "capacity utilization overview",
+    "view utilization dashboard",
+    "utilization by equipment",
+    "how to improve utilization",
+    "utilization trends this month",
+    "compare utilization rates",
+    "utilization KPI chart",
+    "utilization analysis tool",
+    "check fleet utilization",
+    "utilization percent per depot"
+   ]
+  },
+  {
+   "id": "1699",
+   "title": "Time Card Audit",
+   "section": "Accounting",
+   "queries": [
+    "time card audit report",
+    "audit time cards",
+    "review time card discrepancies",
+    "verify employee time entries",
+    "time card audit checklist",
+    "how to run time card audit",
+    "time card audit findings",
+    "time card audit view",
+    "search time card audit",
+    "time card audit for payroll",
+    "time card audit history",
+    "time card audit errors"
+   ]
+  },
+  {
+   "id": "1701",
+   "title": "Notifications",
+   "section": "Operations",
+   "queries": [
+    "system notifications list",
+    "view recent notifications",
+    "notification settings",
+    "how to see alerts",
+    "new notifications panel",
+    "search notifications",
+    "clear notifications",
+    "notification preferences",
+    "notifications for dispatch",
+    "notifications overview",
+    "check unread notifications",
+    "notifications inbox"
+   ]
+  },
+  {
+   "id": "1702",
+   "title": "Activity Map",
+   "section": "Operations",
+   "queries": [
+    "activity map view",
+    "see activity map",
+    "dispatch activity map",
+    "activity map today",
+    "activity map by region",
+    "open activity map",
+    "activity map layers",
+    "activity map filter",
+    "how to use activity map",
+    "activity map zoom",
+    "activity map export",
+    "activity map locations"
+   ]
+  },
+  {
+   "id": "1708",
+   "title": "Account Managers Setup",
+   "section": "Resource Setup",
+   "queries": [
+    "account managers setup",
+    "add account manager",
+    "configure account managers",
+    "account manager entry form",
+    "edit account manager details",
+    "search account manager",
+    "account manager list",
+    "how to assign account manager",
+    "account manager profile setup",
+    "account manager permissions",
+    "account manager onboarding",
+    "account manager data entry"
+   ]
+  },
+  {
+   "id": "1712",
+   "title": "Operation Areas Setup",
+   "section": "Resource Setup",
+   "queries": [
+    "operation areas setup",
+    "define operation area",
+    "add new operation zone",
+    "operation area configuration",
+    "edit operation area",
+    "operation area list",
+    "search operation areas",
+    "how to map operation areas",
+    "operation area boundaries",
+    "operation areas hierarchy",
+    "operation area settings",
+    "operation area management"
+   ]
+  },
+  {
+   "id": "1728",
+   "title": "Deployments / Arrivals",
+   "section": "Operations",
+   "queries": [
+    "deployments arrivals log",
+    "track arrivals",
+    "record deployment event",
+    "view deployments arrivals",
+    "deployment arrival schedule",
+    "how to log a deployment",
+    "search deployments arrivals",
+    "deployment arrivals map",
+    "deployment arrivals status",
+    "deployments arrivals report",
+    "add new arrival entry",
+    "deployment arrivals dashboard"
+   ]
+  },
+  {
+   "id": "1750",
+   "title": "Planner",
+   "section": "Operations",
+   "queries": [
+    "planner",
+    "open planner",
+    "view planner",
+    "operations planner",
+    "schedule planner",
+    "show planner board",
+    "planning view",
+    "my planner screen",
+    "access planner",
+    "go to planner",
+    "planner dashboard",
+    "how do i see my planner"
+   ]
+  },
+  {
+   "id": "1769",
+   "title": "Incident Reports",
+   "section": "Safety",
+   "queries": [
+    "incident reports",
+    "view incident reports",
+    "open safety incident reports",
+    "see incident report list",
+    "incident report log",
+    "safety incidents",
+    "report an incident",
+    "recent incident reports",
+    "incident history",
+    "access incident reports",
+    "incident reports dashboard",
+    "how to view incident reports"
+   ]
+  },
+  {
+   "id": "1770",
+   "title": "Accounting Dashboard",
+   "section": "Accounting",
+   "queries": [
+    "accounting dashboard",
+    "open accounting dashboard",
+    "view finance dashboard",
+    "show accounting dashboard",
+    "dashboard for accounting",
+    "accounting overview screen",
+    "financial dashboard view",
+    "see accounting metrics",
+    "access accounting dashboard",
+    "go to accounting dashboard",
+    "accounting summary dashboard",
+    "how to see accounting dashboard"
+   ]
+  },
+  {
+   "id": "1783",
+   "title": "Maintenance",
+   "section": "Maintenance",
+   "queries": [
+    "maintenance",
+    "open maintenance",
+    "view maintenance page",
+    "maintenance overview",
+    "maintenance screen",
+    "show maintenance",
+    "maintenance module",
+    "access maintenance",
+    "go to maintenance",
+    "maintenance dashboard",
+    "how to see maintenance",
+    "maintenance tasks list"
+   ]
+  },
+  {
+   "id": "1788",
+   "title": "Dispatch Agent",
+   "section": "Operations",
+   "queries": [
+    "dispatch agent",
+    "open dispatch agent",
+    "view dispatch agent",
+    "dispatch agent screen",
+    "show dispatch agent",
+    "dispatch agent dashboard",
+    "access dispatch agent",
+    "go to dispatch agent",
+    "dispatch agent view",
+    "how to see dispatch agent",
+    "dispatch agent console",
+    "my dispatch agent"
+   ]
+  },
+  {
+   "id": "1789",
+   "title": "Maintenance Due List",
+   "section": "Maintenance",
+   "queries": [
+    "maintenance due list",
+    "view maintenance due list",
+    "due maintenance list",
+    "maintenance due items",
+    "show due maintenance",
+    "open maintenance due list",
+    "maintenance due report",
+    "due maintenance screen",
+    "access maintenance due list",
+    "go to maintenance due list",
+    "maintenance due checklist",
+    "how to see maintenance due list"
+   ]
+  },
+  {
+   "id": "1794",
+   "title": "Field Tech Tracker Report",
+   "section": "Operations",
+   "queries": [
+    "field tech tracker report",
+    "view field tech tracker",
+    "open field tech tracker report",
+    "tech tracker report",
+    "field technician tracker",
+    "field tech report",
+    "show field tech tracker",
+    "access field tech tracker report",
+    "go to field tech tracker",
+    "field tech tracker screen",
+    "how to see field tech tracker",
+    "field tech performance report"
+   ]
+  },
+  {
+   "id": "1796",
+   "title": "Check List Report 1",
+   "section": "Reports",
+   "queries": [
+    "check list report 1",
+    "view check list report 1",
+    "open checklist report 1",
+    "checklist report 1",
+    "check list 1 report",
+    "see check list report 1",
+    "access check list report 1",
+    "go to check list report 1",
+    "report 1 checklist",
+    "check list report #1",
+    "how to see check list report 1",
+    "checklist report one"
+   ]
+  },
+  {
+   "id": "1799",
+   "title": "Check List Report 2",
+   "section": "Reports",
+   "queries": [
+    "check list report 2",
+    "cl report 2",
+    "checklist 2",
+    "view check list 2",
+    "show report two checklist",
+    "how many items in checklist 2",
+    "check list 2 summary",
+    "open checklist report two",
+    "report checklist 2 details",
+    "checklist report #2",
+    "list report two",
+    "what's in check list 2"
+   ]
+  },
+  {
+   "id": "1800",
+   "title": "Check List Report 3",
+   "section": "Reports",
+   "queries": [
+    "check list report 3",
+    "cl report 3",
+    "checklist 3",
+    "view check list 3",
+    "show report three checklist",
+    "how many items in checklist 3",
+    "check list 3 summary",
+    "open checklist report three",
+    "report checklist 3 details",
+    "checklist report #3",
+    "list report three",
+    "what's in check list 3"
+   ]
+  },
+  {
+   "id": "1801",
+   "title": "Check List Report 4",
+   "section": "Reports",
+   "queries": [
+    "check list report 4",
+    "cl report 4",
+    "checklist 4",
+    "view check list 4",
+    "show report four checklist",
+    "how many items in checklist 4",
+    "check list 4 summary",
+    "open checklist report four",
+    "report checklist 4 details",
+    "checklist report #4",
+    "list report four",
+    "what's in check list 4"
+   ]
+  },
+  {
+   "id": "1806",
+   "title": "ERP Inventory Report",
+   "section": "Reports",
+   "queries": [
+    "erp inventory report",
+    "inventory report erp",
+    "view erp inventory",
+    "show inventory report",
+    "erp stock report",
+    "current inventory erp",
+    "inventory summary erp",
+    "how many items in erp inventory",
+    "erp inventory totals",
+    "inventory report for erp",
+    "check erp inventory",
+    "erp inventory dashboard"
+   ]
+  },
+  {
+   "id": "2809",
+   "title": "Invoicing",
+   "section": "Accounting",
+   "queries": [
+    "invoicing",
+    "create invoice",
+    "view invoices",
+    "open invoicing",
+    "invoice list",
+    "billing and invoicing",
+    "run invoicing report",
+    "how to invoice",
+    "invoice generation",
+    "invoicing screen",
+    "manage invoices",
+    "invoice processing"
+   ]
+  },
+  {
+   "id": "2866",
+   "title": "Receiver",
+   "section": "Ticketing",
+   "queries": [
+    "receiver ticketing",
+    "receive shipments",
+    "incoming receiver",
+    "log received items",
+    "record receipt",
+    "receiver module",
+    "open receiver",
+    "view receiver tickets",
+    "how to receive goods",
+    "receive inbound",
+    "receiver screen",
+    "process receiver"
+   ]
+  },
+  {
+   "id": "2868",
+   "title": "Shipper",
+   "section": "Ticketing",
+   "queries": [
+    "shipper ticketing",
+    "create shipment",
+    "outbound shipper",
+    "log shipped items",
+    "shipper module",
+    "open shipper",
+    "view shipper tickets",
+    "how to ship",
+    "shipper screen",
+    "process shipper",
+    "send out goods",
+    "shipper dashboard"
+   ]
+  },
+  {
+   "id": "2870",
+   "title": "Intercompany Shipper",
+   "section": "Ticketing",
+   "queries": [
+    "intercompany shipper",
+    "intercompany shipping",
+    "shipper intercompany",
+    "create intercompany shipment",
+    "intercompany outbound",
+    "intercompany shipper ticket",
+    "view intercompany shipper",
+    "intercompany shipper module",
+    "process intercompany shipper",
+    "intercompany shipment entry",
+    "intercompany shipping screen",
+    "intercompany shipper report"
+   ]
+  },
+  {
+   "id": "2872",
+   "title": "Intercompany Receiver",
+   "section": "Ticketing",
+   "queries": [
+    "intercompany receive tickets",
+    "view interco inbound shipments",
+    "who received intercompany transfer today",
+    "list intercompany receipts",
+    "process intercompany receiving",
+    "intercompany inbound docs",
+    "show intercompany receiver queue",
+    "add intercompany receipt",
+    "intercompany receiving status",
+    "search intercompany receiver by po",
+    "intercompany receive approvals",
+    "intercompany inbound tracking"
+   ]
+  }
+ ]
+}

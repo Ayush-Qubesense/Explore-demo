@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="../assets/frest/assets/" data-template="horizontal-menu-template">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<title>OpsFlo - Gas Monitors</title>
+<link rel="shortcut icon" type="image/png" sizes="16x16" href="../assets/images/Logo/opsflo/OpsFloIcon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/fonts/boxicons.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/fonts/fontawesome.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/fonts/flag-icons.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+<link rel="stylesheet" href="../assets/frest/assets/css/demo.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/libs/select2/select2.css" />
+<link rel="stylesheet" href="../assets/frest/assets/vendor/libs/flatpickr/flatpickr.css" />
+<link href="../assets/frest/assets/vendor/css/frest.css" rel="stylesheet" />
+<link href="../assets/css/OPRS/master.css" rel="stylesheet" />
+<link href="../assets/css/command-palette.css?v=7b8a8617" rel="stylesheet" />
+
+<script src="../assets/frest/assets/vendor/js/helpers.js"></script>
+<style>
+  /* demo-only: keep horizontal submenus opening on hover for file:// snapshots */
+  .menu-horizontal .menu-inner > .menu-item:hover > .menu-sub{ display:block; }
+  .snap-hero-badge{ font-size:.7rem; letter-spacing:.04em; }
+  .planner-count{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; border:1.6px solid currentColor; font-weight:600; font-size:.8rem; flex-shrink:0; line-height:1; }
+</style>
+</head>
+<body>
+<div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+<div class="layout-container">
+
+  <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
+    <div class="container-fluid">
+      <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
+        <a href="../index.html" class="app-brand-link gap-2">
+          <span class="app-brand-logo"><img src="../assets/images/Logo/OpsFloLogo.png" height="40" alt="OpsFlo" /></span>
+        </a>
+      </div>
+      <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+          <li class="nav-item navbar-search-wrapper me-2 me-xl-0">
+            <a class="nav-link" href="javascript:void(0);" title="Legend"><i class="bx bx-info-circle bx-sm"></i></a>
+          </li>
+          <!-- AI command palette. Mirrors the (currently d-none) Frest search slot at
+               SiteV3.master:124 in the real app, so the port is a copy-paste. -->
+          <li class="nav-item dropdown navbar-dropdown me-2 me-xl-0" id="cmdPalette">
+            <a class="nav-link" href="javascript:void(0);" id="cmdPaletteToggle" title="Ask or search (Ctrl+K)">
+              <i class="bx bx-search-alt bx-sm"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end p-0" id="cmdPaletteMenu">
+              <div class="cmdp-head">
+                <i class="bx bx-search-alt cmdp-head-ico"></i>
+                <input type="text" class="form-control cmdp-input" id="cmdPaletteInput" autocomplete="off"
+                       placeholder="Ask or search&hellip;" aria-label="Ask or search" />
+                <button type="button" class="cmdp-mic" id="cmdPaletteMic" title="Search by voice" hidden>
+                  <i class="bx bx-microphone"></i>
+                </button>
+                <kbd class="cmdp-kbd">Ctrl+K</kbd>
+              </div>
+              <div class="cmdp-results" id="cmdPaletteResults"></div>
+              <div class="cmdp-foot">
+                <span id="cmdPaletteStatus">Loading&hellip;</span>
+                <span class="cmdp-hint"><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate <kbd>&crarr;</kbd> open</span>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown"><i class="bx bx-sun bx-sm" id="themeIcon"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+              <li><a class="dropdown-item" href="javascript:void(0);" data-theme-choice="light"><span class="align-middle"><i class="bx bx-sun me-2"></i>Light</span></a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" data-theme-choice="dark"><span class="align-middle"><i class="bx bx-moon me-2"></i>Dark</span></a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);" data-theme-choice="system"><span class="align-middle"><i class="bx bx-desktop me-2"></i>System</span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown"><i class="bx bx-grid-alt bx-sm"></i></a>
+            <div class="dropdown-menu dropdown-menu-end py-0"><div class="dropdown-menu-header border-bottom"><div class="dropdown-header d-flex align-items-center py-3"><h5 class="text-body mb-0 me-auto">Shortcuts</h5></div></div>
+              <a class="dropdown-item py-2" href="../index.html"><i class="bx bx-calendar-check me-2 text-primary"></i>Planner</a>
+              <a class="dropdown-item py-2" href="1455.html"><i class="bx bx-check-shield me-2 text-primary"></i>Field Service</a>
+              <a class="dropdown-item py-2" href="2809.html"><i class="bx bx-receipt me-2 text-primary"></i>Invoicing</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown"><i class="bx bx-bell bx-sm"></i></a>
+            <div class="dropdown-menu dropdown-menu-end py-0"><div class="dropdown-menu-header border-bottom"><div class="dropdown-header d-flex align-items-center py-3"><h5 class="text-body mb-0 me-auto">Notifications</h5></div></div>
+              <a class="dropdown-item py-2" href="javascript:void(0);"><div class="fw-semibold">Job 00585 dispatch is late</div><small class="text-muted">DEP exceeded by 40 min</small></a>
+            </div>
+          </li>
+          <li class="nav-item navbar-dropdown dropdown-user dropdown">
+            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+              <div class="avatar avatar-online"><img src="../assets/frest/assets/img/avatars/1.jpg" alt class="rounded-circle" /></div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="javascript:void(0);"><div class="d-flex"><div class="flex-shrink-0 me-3"><div class="avatar avatar-online"><img src="../assets/frest/assets/img/avatars/1.jpg" alt class="rounded-circle" /></div></div><div class="flex-grow-1"><span class="fw-medium d-block lh-1">Michael Jenkins</span><small class="text-muted">OPRS@indoglobus.com</small></div></div></a></li>
+              <li><div class="dropdown-divider"></div></li>
+              <li><a class="dropdown-item" href="../launcher.html"><i class="bx bx-grid-alt me-2"></i><span class="align-middle">All Snapshots</span></a></li>
+              <li><a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-power-off me-2"></i><span class="align-middle">Log Out</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <div class="layout-page">
+        <div class="content-wrapper">
+          <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+            <div class="container-fluid d-flex h-100"><ul class="menu-inner"><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon ti ti-activity"></i><div>Operations</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1750.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Planner</div></a></li><li class="menu-item"><a class="menu-link" href="1600.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Labor Scheduler</div></a></li><li class="menu-item"><a class="menu-link" href="1686.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Utilization</div></a></li><li class="menu-item"><a class="menu-link" href="1702.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Activity Map</div></a></li><li class="menu-item"><a class="menu-link" href="1728.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Deployments / Arrivals</div></a></li><li class="menu-item"><a class="menu-link" href="1701.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Notifications</div></a></li><li class="menu-item"><a class="menu-link" href="1788.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Dispatch Agent</div></a></li><li class="menu-item"><a class="menu-link" href="1794.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Field Tech Tracker Report</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon ti ti-ticket"></i><div>Ticketing</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1455.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Field Service</div></a></li><li class="menu-item"><a class="menu-link" href="2868.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Shipper</div></a></li><li class="menu-item"><a class="menu-link" href="2866.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Receiver</div></a></li><li class="menu-item"><a class="menu-link" href="2870.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Intercompany Shipper</div></a></li><li class="menu-item"><a class="menu-link" href="2872.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Intercompany Receiver</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon ti ti-database-dollar"></i><div>Accounting</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="2809.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Invoicing</div></a></li><li class="menu-item"><a class="menu-link" href="1770.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Dashboard</div></a></li><li class="menu-item"><a class="menu-link" href="1676.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Payroll</div></a></li><li class="menu-item"><a class="menu-link" href="1699.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Time Card Audit</div></a></li><li class="menu-item"><a class="menu-link" href="1674.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Expenses</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon bx bx-wrench"></i><div>Maintenance</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1783.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Maintenance</div></a></li><li class="menu-item"><a class="menu-link" href="1789.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Maintenance Due List</div></a></li><li class="menu-item"><a class="menu-link" href="1601.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Predictive Maintenance</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon tf-icons bx bx-customize"></i><div>Reports</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1796.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Check List Report 1</div></a></li><li class="menu-item"><a class="menu-link" href="1799.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Check List Report 2</div></a></li><li class="menu-item"><a class="menu-link" href="1800.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Check List Report 3</div></a></li><li class="menu-item"><a class="menu-link" href="1801.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Check List Report 4</div></a></li><li class="menu-item"><a class="menu-link" href="1806.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>ERP Inventory Report</div></a></li></ul></li><li class="menu-item active"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon tf-icons bx bx-customize"></i><div>Safety</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1685.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>JSAs</div></a></li><li class="menu-item"><a class="menu-link" href="1769.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Incident Reports</div></a></li><li class="menu-item"><a class="menu-link" href="1626.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Gas Monitors</div></a></li><li class="menu-item"><a class="menu-link" href="1590g.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>General Certifications</div></a></li><li class="menu-item"><a class="menu-link" href="1590e.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Equipment Certifications</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon ti ti-traffic-cone"></i><div>Training</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1590c.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Customer Certifications</div></a></li><li class="menu-item"><a class="menu-link" href="1590g.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>General Certifications</div></a></li><li class="menu-item"><a class="menu-link" href="1590e.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Equipment Certifications</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon bx bx-file"></i><div>Documents</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1602.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Certificate Expiration Tracker</div></a></li><li class="menu-item"><a class="menu-link" href="1580.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Document Module Configuration</div></a></li></ul></li><li class="menu-item"><a href="javascript:void(0)" class="menu-link menu-toggle"><i class="menu-icon bx bx-cog"></i><div>Resource Setup</div></a><ul class="menu-sub"><li class="menu-item"><a class="menu-link" href="1708.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Account Managers Setup</div></a></li><li class="menu-item"><a class="menu-link" href="1712.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Operation Areas Setup</div></a></li><li class="menu-item"><a class="menu-link" href="1363.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Equipment / Trailer Master</div></a></li><li class="menu-item"><a class="menu-link" href="1362.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Vehicle / Truck Master</div></a></li><li class="menu-item"><a class="menu-link" href="1614.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Facilities Setup</div></a></li><li class="menu-item"><a class="menu-link" href="1352.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Customer Master</div></a></li><li class="menu-item"><a class="menu-link" href="1354.html"><i class="menu-icon tf-icons bx bx-shape-circle"></i><div>Warehouse / Yard Address</div></a></li></ul></li></ul></div>
+          </aside>
+<div class="container-fluid flex-grow-1 container-p-y">
+          
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+            <div>
+              <div class="text-muted small mb-1"><i class="bx bx-home-alt"></i> Safety <i class="bx bx-chevron-right"></i> Gas Monitors</div>
+              <h4 class="fw-bold mb-0">Gas Monitors</h4>
+            </div>
+            <button class="btn btn-primary"><i class="bx bx-plus me-1"></i>New Monitor</button>
+          </div>
+
+          <div class="card mb-3"><div class="card-body py-3">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-3"><label class="form-label small text-muted mb-1">Facility</label><select class="form-select"><option>Dallas Operations</option><option>Newark Ops</option></select></div>
+              <div class="col-md-3"><label class="form-label small text-muted mb-1">Status</label><select class="form-select"><option>All</option><option>Active</option><option>Pending</option></select></div>
+              <div class="col-md-3"><label class="form-label small text-muted mb-1">Date</label><input type="text" class="form-control" value="Jul 14, 2026" /></div>
+              <div class="col-md-3 d-flex gap-2">
+                <input type="text" class="form-control" placeholder="Search..." />
+                <button class="btn btn-outline-primary"><i class="bx bx-search"></i></button>
+              </div>
+            </div>
+          </div></div>
+
+          <div class="card">
+            <div class="card-datatable table-responsive">
+              <table class="table table-hover mb-0">
+                <thead class="table-light"><tr><th>Monitor #</th><th>Model</th><th>Assigned To</th><th>Last Cal</th><th>Next Cal</th><th>Status</th><th></th></tr></thead>
+                <tbody><tr><td>MON-50000</td><td>Delivery</td><td>Pedro Hayes</td><td>Jul 10, 2026</td><td>Aug 01, 2026</td><td><span class="badge bg-label-secondary">On Hold</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50137</td><td>Backhaul</td><td>Orlando Klein</td><td>Aug 01, 2026</td><td>Jun 28, 2026</td><td><span class="badge bg-label-success">Active</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50274</td><td>Clamping</td><td>Lynne Maggio</td><td>Jun 28, 2026</td><td>Jul 14, 2026</td><td><span class="badge bg-label-success">Active</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50411</td><td>Inspection</td><td>Barry Powlowski</td><td>Jul 14, 2026</td><td>Jul 14, 2026</td><td><span class="badge bg-label-warning">Pending</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50548</td><td>Install</td><td>Brenda Roob</td><td>Jul 14, 2026</td><td>Jul 13, 2026</td><td><span class="badge bg-label-primary">Complete</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50685</td><td>Pull</td><td>Jenny Collier</td><td>Jul 13, 2026</td><td>Jul 12, 2026</td><td><span class="badge bg-label-danger">Overdue</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr><tr><td>MON-50822</td><td>Field Service</td><td>Jon Towne</td><td>Jul 12, 2026</td><td>Jul 10, 2026</td><td><span class="badge bg-label-info">In Progress</span></td><td class="text-end"><i class='bx bx-dots-vertical-rounded text-muted'></i></td></tr></tbody>
+              </table>
+            </div>
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top">
+              <span class="text-muted small">Showing 1 to 7 of 7 entries</span>
+              <ul class="pagination pagination-sm mb-0">
+                <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layout-overlay layout-menu-toggle"></div>
+  <div class="drag-target"></div>
+</div>
+<script src="../assets/frest/assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/frest/assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/frest/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../assets/frest/assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../assets/frest/assets/vendor/js/menu.js"></script>
+<script src="../assets/frest/assets/js/main.js"></script>
+<script>
+(function(){
+  // Lightweight, reliable Light/Dark switch for the static snapshots
+  var core = document.querySelector('.template-customizer-core-css');
+  var theme = document.querySelector('.template-customizer-theme-css');
+  function setTheme(mode){
+    var dark = mode === 'dark' || (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark-style', dark);
+    document.documentElement.classList.toggle('light-style', !dark);
+    if(core)  core.setAttribute('href', core.getAttribute('href').replace(/core(-dark)?\.css/, dark ? 'core-dark.css' : 'core.css'));
+    if(theme) theme.setAttribute('href', theme.getAttribute('href').replace(/theme-default(-dark)?\.css/, dark ? 'theme-default-dark.css' : 'theme-default.css'));
+    var ic = document.getElementById('themeIcon'); if(ic) ic.className = 'bx bx-sm ' + (dark ? 'bx-moon' : 'bx-sun');
+    try{ localStorage.setItem('opsflo-theme', mode); }catch(e){}
+  }
+  document.querySelectorAll('[data-theme-choice]').forEach(function(el){
+    el.addEventListener('click', function(){ setTheme(el.getAttribute('data-theme-choice')); });
+  });
+  try{ setTheme(localStorage.getItem('opsflo-theme') || 'light'); }catch(e){ setTheme('light'); }
+})();
+</script>
+<!-- ------------------------------------------------------ AI command palette -->
+<!-- Site root for this page's depth: "" at the root, "../" inside pages/. The index
+     ships root-relative URLs; this is the only per-page value the widget needs.
+     In production this is "" and the index carries absolute URLs. -->
+<script>window.__OPSFLO_SITE_ROOT__ = "../";</script>
+<script src="../assets/data/page-index.js?v=eede48da"></script>
+<!-- Classic script on purpose: it must still run under file://, where ES modules are
+     CORS-blocked. It pulls transformers.min.js (which IS an ES module) via a lazy
+     dynamic import() and falls back to keyword search if that import fails. -->
+<script src="../assets/js/command-palette.js?v=79fa9110"></script>
+</body>
+</html>

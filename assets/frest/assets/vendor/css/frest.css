@@ -1,0 +1,13 @@
+﻿#spanEnvironmentName {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 50%;
+    }
+}
+.k-list-item.k-selected, .k-selected.k-list-optionlabel {
+    color: #ffffff !important;
+    background-color: #5a8dee !important;
+}

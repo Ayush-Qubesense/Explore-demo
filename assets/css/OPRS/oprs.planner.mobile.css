@@ -1,0 +1,407 @@
+/* =====================================================================
+   File: oprs.planner.mobile.css
+   Styles For: Mobile-Responsive Planner Overrides
+   Business Context: Enlarges touch targets, stacks columns on narrow
+     viewports, and fixes iOS/Android quirks for the dispatcher board.
+     Loaded in addition to oprs.planner.css or oprs.plannerV5.css when
+     the user agent is a tablet or phone.
+   Related Files:
+     - Controls/OPRS/PlannerV4.aspx, PlannerV5.aspx (mobile view)
+     - oprs.planner.css (desktop base styles)
+     - oprs.plannerV5.css (V5 scoped desktop styles)
+     - oprs.planner.js
+   ===================================================================== */
+
+/* --- Base Styles for All Devices ----------------------------------------- */
+/* Suppress tap-highlight and callout globally for app-like feel             */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Responsive layout containers */
+.row {
+    flex-wrap: wrap;
+}
+
+
+/* --- Tabler Icon Touch Targets ------------------------------------------- */
+/* Enlarge icons and add padding for finger-friendly taps on mobile          */
+.ti {
+    font-size: 1.25rem;
+}
+
+button>.ti {
+    font-size: 16px !important;
+}
+
+/* Specifically increase tag icon size */
+.ti-tag {
+    font-size: 20px !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 0 0 10px !important;
+    position: relative !important;
+    z-index: 5 !important;
+    margin: -5px 0 0 2px !important;
+}
+
+/* --- Dispatch Action Icons (Send, Restore, Alert) ------------------------ */
+/* These icons represent workflow actions: dispatch (send), undo (restore),   */
+/* flagged (checkered), and warning (alert-triangle)                         */
+.ti-send,
+.ti-send-off,
+.bxs-flag-checkered,
+.ti-restore,
+.ti-alert-triangle {
+    font-size: 20px !important;
+    padding: 0 10px 0 0 !important;
+}
+
+.bx-dots-vertical-rounded {
+    font-size: 20px !important;
+    padding: 0 2px 0 0 !important;
+}
+
+/* For icons inside tooltips */
+[data-bs-toggle="tooltip"] .ti-tag {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* iOS specific enhancements for tabler icons */
+@supports (-webkit-touch-callout: none) {
+
+    /* Make sure the icon is centered within its touch target */
+    .ti-tag:before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Progress bar tooltips with tag icons */
+    .progress-bar[data-bs-toggle="tooltip"] {
+        cursor: pointer;
+    }
+
+    /* Tooltip content with tag icon */
+    [data-bs-original-title*="ti-tag"],
+    [title*="ti-tag"] {
+        cursor: pointer;
+    }
+
+    /* Additional improvements for tag icon in specific context */
+    [data-bs-toggle="tooltip"] i.ti-tag {
+        padding: 12px !important;
+        font-size: 1.75rem !important;
+        cursor: pointer !important;
+    }
+
+    /* Style active state for visual feedback */
+    [data-bs-toggle="tooltip"] i.ti-tag:active {
+        transform: scale(1.3);
+        transition: transform 0.1s ease;
+    }
+}
+
+
+/* --- Checkbox Enhancement for Mobile ------------------------------------- */
+/* Scaled up for touch accuracy; copy-resource checkboxes in dispatch dialogs */
+input[type="checkbox"] {
+    min-width: 12px !important;
+    min-height: 12px !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 8px !important;
+    transform: scale(1.5);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Custom checkbox labels for better tap target */
+input[type="checkbox"]+span {
+    padding: 6px 8px 6px 0;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+/* Create wrapper for checkbox and label to increase tap target */
+.copy-resource-container {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    min-height: 44px;
+    margin-bottom: 8px !important;
+}
+
+/* Improve for iOS specifically */
+@supports (-webkit-touch-callout: none) {
+    input[type="checkbox"] {
+        transform: scale(1.75);
+    }
+
+    /* Add touch wrapper around checkboxes */
+    input[type="checkbox"]+span {
+        margin-left: 5px;
+    }
+
+    /* Touch-friendly container for checkboxes */
+    .copy-resource-container,
+    #chkCopySameResource,
+    #chkPushChildJobCopySameResource {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Custom tooltip container to improve tap targets */
+.tooltip-tap-target {
+    position: relative;
+    display: inline-block;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 5px;
+}
+
+/* Improved scrolling for touch devices */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* --- Resource Tiles Mobile Layout ----------------------------------------- */
+/* Wrap tiles into a flex grid instead of fixed-width floats                 */
+.resources-employee-tiles,
+.resources-truck-tiles,
+.resources-trailer-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.employee-tab-title,
+.card-body-job-heading {
+    font-size: 14px;
+}
+
+/* --- Tablet / Phone Breakpoint (<768px) ---------------------------------- */
+/* Stack left (jobs) and right (resources) panels vertically                 */
+@media (max-width: 768px) {
+    #left-main-section {
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+
+    #right-main-section {
+        width: 100% !important;
+    }
+
+    .resource-header-dropdown-filters {
+        flex-direction: column;
+    }
+
+    .resource-header-dropdown-filters>div {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .date-filter-panel {
+        flex-direction: column;
+    }
+
+    .date-filter-panel>div {
+        width: 100% !important;
+    }
+
+    .job-header-dropdown-filters {
+        flex-wrap: wrap;
+    }
+
+    .job-header-dropdown-filters>div {
+        width: 50% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .planner-footer-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .planner-footer-buttons>div {
+        margin-bottom: 0.5rem;
+    }
+
+    .right-side-btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .right-side-btn-group button {
+        margin: 0.2rem;
+    }
+
+    .datepicker {
+        width: 140px;
+    }
+}
+
+/* Map containers */
+.minheight-map {
+    min-height: 350px;
+    height: 100% !important;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+
+    /* iOS specific styles */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+        /* Prevent zoom on focus */
+    }
+
+    .modal {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fix for iOS momentum scrolling */
+    .tab-content,
+    #trackerTable,
+    .modal-body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fix iOS sticky hover effects */
+    .bx-burst-hover:active {
+        animation: none;
+    }
+
+    /* Tooltip icon enhancements for iOS */
+    [data-bs-toggle="tooltip"] {
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Create larger touch target for tooltip icons */
+    [data-bs-toggle="tooltip"]::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        z-index: 1;
+    }
+
+    /* Specifically target the tag icon */
+    [data-bs-toggle="tooltip"] i.ti-tag {
+        padding: 10px !important;
+        cursor: pointer !important;
+    }
+}
+
+/* Android specific fixes */
+@supports not (-webkit-touch-callout: none) {
+
+    /* Android specific styles */
+    .modal-open {
+        position: fixed;
+        width: 100%;
+    }
+
+    select {
+        background-position: right 0.5rem center;
+    }
+}
+
+/* --- Job Section Overflow (One-shift / Two-shift) ------------------------ */
+/* Constrain job section height to prevent full-page scroll on mobile        */
+.card-body-job-menu-section {
+    padding: 10px;
+}
+
+.job-section-oneshift,
+.job-section-twoshift {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.job-section-oneshift {
+    max-height: 60vh;
+}
+
+.job-section-twoshift {
+    max-height: 50vh;
+}
+
+/* Fix for modals on small screens */
+/*.modal-dialog {
+    margin: 0.5rem;
+    max-width: 95%;
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: 95%;
+    }
+
+    .modal-body {
+        padding: 0.5rem;
+    }*/
+
+    /* Make tab text smaller on mobile */
+    /*.nav-tabs .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 14px;
+    }
+}*/
+
+/* Touch-friendly layout */
+.tab-pane {
+    padding: 0.5rem !important;
+}
+
+/* Hide elements that may not work well on mobile */
+@media (max-width: 576px) {
+    .d-xs-none {
+        display: none !important;
+    }
+
+    .datepicker {
+        width: 140px;
+    }
+}

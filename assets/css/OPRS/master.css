@@ -1,0 +1,50 @@
+/* =====================================================================
+   File: master.css
+   Styles For: OPRS Shared Master Page
+   Business Context: Base body background and colour-legend modal dialog
+     (masterLegendDialog) that explains job status colours and resource
+     badge meanings to dispatchers. Applied to all OPRS screens via
+     SiteV3.master.
+   Related Files:
+     - SiteV3.master (ASP.NET master page)
+     - 1401.css (page-specific overrides)
+   ===================================================================== */
+
+/* --- Base Body ----------------------------------------------------------- */
+
+body {
+    background-color: White !important;
+}
+
+/* --- Colour Legend Modal -------------------------------------------------- */
+/* Full-screen-ish modal showing the legend of job status colours, resource   */
+/* badge meanings, and priority tag definitions for dispatcher reference      */
+#SiteBody #masterLegendDialog {
+    overflow-y: hidden
+}
+
+    #SiteBody #masterLegendDialog .modal-dialog {
+        justify-items: center;
+    }
+
+    #SiteBody #masterLegendDialog .modal-dialog, #master-modal-content {
+        max-width: 55% !important;
+        max-height: 97% !important;
+        height: 97% !important;
+    }
+
+    #SiteBody #masterLegendDialog .modal-body {
+        /*  100% = dialog height, 120px = header + footer */
+        max-height: calc(100% - 68px);
+        overflow-y: hidden;
+    }
+
+#SiteBody #masterLegendDialogBody .modal .modal-footer {
+    padding: 4px;
+}
+
+#SiteBody #masterLegendDialogBody {
+    /*100% = dialog height, 120px = header + footer*/
+    max-height: calc(100% - 68px);
+    overflow-y: scroll;
+}

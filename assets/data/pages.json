@@ -1,0 +1,665 @@
+[
+ {
+  "id": "1352",
+  "title": "Customer Master",
+  "section": "Resource Setup",
+  "url": "pages/1352.html",
+  "text": "Customer Master. Resource Setup. Customer #, Customer, Area, Account Mgr, Terms, Status. customers, clients, accounts, customer list, who we work for, client records",
+  "desc": "Manage customers by number, area, manager, terms, and status",
+  "cols": [
+   "Customer #",
+   "Customer",
+   "Area",
+   "Account Mgr",
+   "Terms",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1354",
+  "title": "Warehouse / Yard Address",
+  "section": "Resource Setup",
+  "url": "pages/1354.html",
+  "text": "Warehouse / Yard Address. Resource Setup. Warehouse, Address, City, State, Zip, Status. warehouse addresses, yard locations, storage sites, depot addresses",
+  "desc": "Maintain warehouse locations with address, city, state, zip, status",
+  "cols": [
+   "Warehouse",
+   "Address",
+   "City",
+   "State",
+   "Zip",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1362",
+  "title": "Vehicle / Truck Master",
+  "section": "Resource Setup",
+  "url": "pages/1362.html",
+  "text": "Vehicle / Truck Master. Resource Setup. Unit #, Type, Make, Plate, Facility, Status. trucks, fleet list, vehicles, license plates, fleet register, cars",
+  "desc": "Track vehicles by unit, type, make, plate, facility, status",
+  "cols": [
+   "Unit #",
+   "Type",
+   "Make",
+   "Plate",
+   "Facility",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1363",
+  "title": "Equipment / Trailer Master",
+  "section": "Resource Setup",
+  "url": "pages/1363.html",
+  "text": "Equipment / Trailer Master. Resource Setup. Unit #, Type, Make, Model, Facility, Status. trailers, equipment list, asset register, units, gear, machinery",
+  "desc": "Record equipment and trailers by unit, type, make, model, facility, status",
+  "cols": [
+   "Unit #",
+   "Type",
+   "Make",
+   "Model",
+   "Facility",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1455",
+  "title": "Field Service",
+  "section": "Ticketing",
+  "url": "pages/1455.html",
+  "text": "Field Service. Ticketing. Ticket #, Customer, Job Type, Lease / Well, Tech, Ticket Date, Status. work orders, service tickets, jobs, well site work, technician tickets, lease work, field jobs",
+  "desc": "Log field service tickets with customer, job type, lease, tech, date, status",
+  "cols": [
+   "Ticket #",
+   "Customer",
+   "Job Type",
+   "Lease / Well",
+   "Tech",
+   "Ticket Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1580",
+  "title": "Document Module Configuration",
+  "section": "Documents",
+  "url": "pages/1580.html",
+  "text": "Document Module Configuration. Documents. Module, Category, Template, Required, Updated, Status. document setup, templates, required documents, module configuration, paperwork rules",
+  "desc": "Configure document modules by category, template, requirement, update, and status",
+  "cols": [
+   "Module",
+   "Category",
+   "Template",
+   "Required",
+   "Updated",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1590c",
+  "title": "Customer Certifications",
+  "section": "Training",
+  "url": "pages/1590c.html",
+  "text": "Customer Certifications. Training. Customer, Certification, Issued, Expires, Owner, Status. customer specific training, site access requirements, customer compliance, customer credentials",
+  "desc": "Track customer certifications, issue and expiry dates, owner, and status",
+  "cols": [
+   "Customer",
+   "Certification",
+   "Issued",
+   "Expires",
+   "Owner",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1590e",
+  "title": "Equipment Certifications",
+  "section": "Safety",
+  "url": "pages/1590e.html",
+  "text": "Equipment Certifications. Safety. Equipment, Certification, Issued, Expires, Inspector, Status. equipment inspection certificates, expired equipment certs, asset compliance, API inspection, gear certification",
+  "desc": "Record equipment certifications with issue, expiry, inspector, and status",
+  "cols": [
+   "Equipment",
+   "Certification",
+   "Issued",
+   "Expires",
+   "Inspector",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1590g",
+  "title": "General Certifications",
+  "section": "Safety",
+  "url": "pages/1590g.html",
+  "text": "General Certifications. Safety. Employee, Certification, Issued, Expires, Issuer, Status. expired certifications, expiring cards, OSHA, compliance, employee training records, credentials, tickets and licences",
+  "desc": "Track employee certifications, issue dates, expirations, and status",
+  "cols": [
+   "Employee",
+   "Certification",
+   "Issued",
+   "Expires",
+   "Issuer",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1600",
+  "title": "Labor Scheduler",
+  "section": "Operations",
+  "url": "pages/1600.html",
+  "text": "Labor Scheduler. Operations. Employee, Role, Shift, Facility, Scheduled Date, Status. shift scheduling, roster, who works when, staffing, assign shifts, crew schedule, manpower planning, move shift, change shift, reassign tech, edit worker schedule, morning afternoon shift",
+  "desc": "Schedule employees by role, shift, facility, and status",
+  "cols": [
+   "Employee",
+   "Role",
+   "Shift",
+   "Facility",
+   "Scheduled Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1601",
+  "title": "Predictive Maintenance",
+  "section": "Maintenance",
+  "url": "pages/1601.html",
+  "text": "Predictive Maintenance. Maintenance. failure prediction, breakdown risk, asset health, condition monitoring, anticipate failures, what will break",
+  "desc": "View equipment health trends and upcoming maintenance predictions",
+  "cols": [],
+  "archetype": "dashboard"
+ },
+ {
+  "id": "1602",
+  "title": "Certificate Expiration Tracker",
+  "section": "Documents",
+  "url": "pages/1602.html",
+  "text": "Certificate Expiration Tracker. Documents. Document, Owner, Category, Issued, Expires, Status. expiring documents, expired paperwork, renewals, what expires soon, document expiry, out of date documents",
+  "desc": "Monitor document certificates, owners, categories, and expiration status",
+  "cols": [
+   "Document",
+   "Owner",
+   "Category",
+   "Issued",
+   "Expires",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1614",
+  "title": "Facilities Setup",
+  "section": "Resource Setup",
+  "url": "pages/1614.html",
+  "text": "Facilities Setup. Resource Setup. Facility, Type, City, State, Manager, Status. yards, locations, sites, offices, facility list, bases, depots",
+  "desc": "Configure facility details, type, location, manager, and status",
+  "cols": [
+   "Facility",
+   "Type",
+   "City",
+   "State",
+   "Manager",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1626",
+  "title": "Gas Monitors",
+  "section": "Safety",
+  "url": "pages/1626.html",
+  "text": "Gas Monitors. Safety. Monitor #, Model, Assigned To, Last Cal, Next Cal, Status. gas detector, calibration due, H2S monitor, gas detection equipment, bump test, air monitoring",
+  "desc": "Track gas monitors, models, assignments, calibrations, and status",
+  "cols": [
+   "Monitor #",
+   "Model",
+   "Assigned To",
+   "Last Cal",
+   "Next Cal",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1674",
+  "title": "Expenses",
+  "section": "Accounting",
+  "url": "pages/1674.html",
+  "text": "Expenses. Accounting. Expense #, Employee, Category, Date, Amount, Status. reimbursements, spending, receipts, expense claims, costs, employee expenses",
+  "desc": "Record expenses by employee, category, date, amount, and status",
+  "cols": [
+   "Expense #",
+   "Employee",
+   "Category",
+   "Date",
+   "Amount",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1676",
+  "title": "Payroll",
+  "section": "Accounting",
+  "url": "pages/1676.html",
+  "text": "Payroll. Accounting. Employee, Pay Period, Reg Hours, OT Hours, Gross Pay, Status. overtime, wages, paychecks, gross pay, hours worked, pay period, employee compensation, salary, OT hours, pay stubs, payslips, generate pay stubs, run payroll",
+  "desc": "Process payroll with employee hours, pay period, and gross pay",
+  "cols": [
+   "Employee",
+   "Pay Period",
+   "Reg Hours",
+   "OT Hours",
+   "Gross Pay",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1685",
+  "title": "JSAs",
+  "section": "Safety",
+  "url": "pages/1685.html",
+  "text": "JSAs. Safety. JSA #, Task, Facility, Prepared By, Date, Status. job safety analysis, hazard assessment, safety forms, risk assessment, pre job safety, JSA",
+  "desc": "Review JSA records by task, facility, and status",
+  "cols": [
+   "JSA #",
+   "Task",
+   "Facility",
+   "Prepared By",
+   "Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1686",
+  "title": "Utilization",
+  "section": "Operations",
+  "url": "pages/1686.html",
+  "text": "Utilization. Operations. crew utilization, capacity, how busy are we, productivity, idle time, resource usage, billable hours, utilization dashboard",
+  "desc": "Monitor overall resource utilization across operations",
+  "cols": [],
+  "archetype": "dashboard"
+ },
+ {
+  "id": "1699",
+  "title": "Time Card Audit",
+  "section": "Accounting",
+  "url": "pages/1699.html",
+  "text": "Time Card Audit. Accounting. Employee, Date, Clock In, Clock Out, Total Hours, Status. overtime, clock in clock out, timesheets, hours discrepancy, attendance, time tracking, punch times",
+  "desc": "Audit employee time cards by date and status",
+  "cols": [
+   "Employee",
+   "Date",
+   "Clock In",
+   "Clock Out",
+   "Total Hours",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1701",
+  "title": "Notifications",
+  "section": "Operations",
+  "url": "pages/1701.html",
+  "text": "Notifications. Operations. Type, Message, Related Job, Created, Status. alerts, messages, unread, warnings, system notices, what happened",
+  "desc": "View notifications by type, related job, and status",
+  "cols": [
+   "Type",
+   "Message",
+   "Related Job",
+   "Created",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1702",
+  "title": "Activity Map",
+  "section": "Operations",
+  "url": "pages/1702.html",
+  "text": "Activity Map. Operations. live GPS, vehicle locations, map of units, where are my trucks, fleet tracking, real time positions, geofence",
+  "desc": "Explore field activity locations on interactive map",
+  "cols": [],
+  "archetype": "map"
+ },
+ {
+  "id": "1708",
+  "title": "Account Managers Setup",
+  "section": "Resource Setup",
+  "url": "pages/1708.html",
+  "text": "Account Managers Setup. Resource Setup. Name, Email, Region, Customers, Phone, Status. sales reps, account owners, who manages this customer, manager assignment",
+  "desc": "Configure account manager profiles with contact and region details",
+  "cols": [
+   "Name",
+   "Email",
+   "Region",
+   "Customers",
+   "Phone",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1712",
+  "title": "Operation Areas Setup",
+  "section": "Resource Setup",
+  "url": "pages/1712.html",
+  "text": "Operation Areas Setup. Resource Setup. Area, Region, Facility, Supervisor, Wells, Status. regions, territories, operating areas, area setup, field areas, basins",
+  "desc": "Define operation areas with facilities, supervisors, and well counts",
+  "cols": [
+   "Area",
+   "Region",
+   "Facility",
+   "Supervisor",
+   "Wells",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1728",
+  "title": "Deployments / Arrivals",
+  "section": "Operations",
+  "url": "pages/1728.html",
+  "text": "Deployments / Arrivals. Operations. Vehicle, Job #, ETD, DEP, ETA, ARR, Status. who is late, delayed departures, missed departure, behind schedule, truck arrivals, departure times, on time performance, estimated arrival",
+  "desc": "Track vehicle deployments and arrivals by job and schedule",
+  "cols": [
+   "Vehicle",
+   "Job #",
+   "ETD",
+   "DEP",
+   "ETA",
+   "ARR",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1750",
+  "title": "Planner",
+  "section": "Operations",
+  "url": "pages/1750.html",
+  "text": "Planner. Operations. daily plan, schedule board, dispatch board, jobs for today, what is on today, assign work, home page",
+  "desc": "Plan and organize upcoming operations tasks",
+  "cols": [],
+  "archetype": "planner"
+ },
+ {
+  "id": "1769",
+  "title": "Incident Reports",
+  "section": "Safety",
+  "url": "pages/1769.html",
+  "text": "Incident Reports. Safety. Incident #, Type, Facility, Reported By, Date, Severity. accidents, injuries, near miss, safety events, incidents, OSHA recordable, someone got hurt",
+  "desc": "Review incident reports by type, facility, and severity",
+  "cols": [
+   "Incident #",
+   "Type",
+   "Facility",
+   "Reported By",
+   "Date",
+   "Severity"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1770",
+  "title": "Accounting Dashboard",
+  "section": "Accounting",
+  "url": "pages/1770.html",
+  "text": "Accounting Dashboard. Accounting. revenue, financial overview, KPIs, money, profit, financial summary, how are we doing financially",
+  "desc": "Monitor key accounting metrics and financial performance",
+  "cols": [],
+  "archetype": "dashboard"
+ },
+ {
+  "id": "1783",
+  "title": "Maintenance",
+  "section": "Maintenance",
+  "url": "pages/1783.html",
+  "text": "Maintenance. Maintenance. Work Order, Asset, Type, Assigned, Due Date, Status. repairs, fix equipment, service asset, breakdown, maintenance work orders, broken truck, work order list, open work orders, repair jobs, fix it",
+  "desc": "Track maintenance work orders by asset, type, and due date",
+  "cols": [
+   "Work Order",
+   "Asset",
+   "Type",
+   "Assigned",
+   "Due Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1788",
+  "title": "Dispatch Agent",
+  "section": "Operations",
+  "url": "pages/1788.html",
+  "text": "Dispatch Agent. Operations. Agent, Job #, Customer, Assigned Tech, Priority, Status. auto dispatch, assign technician, job assignment, routing, who is assigned, send a tech",
+  "desc": "Assign dispatch agents to jobs with priority and status",
+  "cols": [
+   "Agent",
+   "Job #",
+   "Customer",
+   "Assigned Tech",
+   "Priority",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1789",
+  "title": "Maintenance Due List",
+  "section": "Maintenance",
+  "url": "pages/1789.html",
+  "text": "Maintenance Due List. Maintenance. Asset, Service, Last Done, Due Date, Meter, Status. upcoming service, overdue maintenance, what needs servicing, preventive maintenance due, inspection due, service schedule",
+  "desc": "View upcoming maintenance services by asset and due date",
+  "cols": [
+   "Asset",
+   "Service",
+   "Last Done",
+   "Due Date",
+   "Meter",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1794",
+  "title": "Field Tech Tracker Report",
+  "section": "Operations",
+  "url": "pages/1794.html",
+  "text": "Field Tech Tracker Report. Operations. Technician, Facility, Last Seen, Vehicle, On Job, Status. where are my technicians, last seen, tech location, field staff tracking, who is on site, crew whereabouts",
+  "desc": "Track field technicians' locations, vehicles, and job status",
+  "cols": [
+   "Technician",
+   "Facility",
+   "Last Seen",
+   "Vehicle",
+   "On Job",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1796",
+  "title": "Check List Report 1",
+  "section": "Reports",
+  "url": "pages/1796.html",
+  "text": "Check List Report 1. Reports. Job #, Checklist, Technician, Completed, Score, Status. inspection checklist results, completed checklists, audit forms, compliance checks, job checklist scores",
+  "desc": "Review checklist completions, scores, and status per job",
+  "cols": [
+   "Job #",
+   "Checklist",
+   "Technician",
+   "Completed",
+   "Score",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1799",
+  "title": "Check List Report 2",
+  "section": "Reports",
+  "url": "pages/1799.html",
+  "text": "Check List Report 2. Reports. Job #, Checklist, Technician, Completed, Score, Status. inspection checklist results, completed checklists, audit forms, compliance checks, job checklist scores",
+  "desc": "Review checklist results by job, technician, and score",
+  "cols": [
+   "Job #",
+   "Checklist",
+   "Technician",
+   "Completed",
+   "Score",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1800",
+  "title": "Check List Report 3",
+  "section": "Reports",
+  "url": "pages/1800.html",
+  "text": "Check List Report 3. Reports. Job #, Checklist, Technician, Completed, Score, Status. inspection checklist results, completed checklists, audit forms, compliance checks, job checklist scores",
+  "desc": "Analyze checklist completion and scores per job",
+  "cols": [
+   "Job #",
+   "Checklist",
+   "Technician",
+   "Completed",
+   "Score",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1801",
+  "title": "Check List Report 4",
+  "section": "Reports",
+  "url": "pages/1801.html",
+  "text": "Check List Report 4. Reports. Job #, Checklist, Technician, Completed, Score, Status. inspection checklist results, completed checklists, audit forms, compliance checks, job checklist scores",
+  "desc": "Track checklist status and scores across jobs",
+  "cols": [
+   "Job #",
+   "Checklist",
+   "Technician",
+   "Completed",
+   "Score",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "1806",
+  "title": "ERP Inventory Report",
+  "section": "Reports",
+  "url": "pages/1806.html",
+  "text": "ERP Inventory Report. Reports. SKU, Item, Warehouse, On Hand, Reorder Pt, Status. stock levels, on hand quantity, reorder, warehouse inventory, parts stock, supplies, what do we have in stock",
+  "desc": "Monitor inventory levels by SKU, warehouse, and reorder point",
+  "cols": [
+   "SKU",
+   "Item",
+   "Warehouse",
+   "On Hand",
+   "Reorder Pt",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "2809",
+  "title": "Invoicing",
+  "section": "Accounting",
+  "url": "pages/2809.html",
+  "text": "Invoicing. Accounting. Invoice #, Customer, Job #, Invoice Date, Amount, Status. invoices, billing, how much did we bill, accounts receivable, customer charges, unpaid, overdue invoices, revenue billed",
+  "desc": "Generate and track invoices by customer, job, and date",
+  "cols": [
+   "Invoice #",
+   "Customer",
+   "Job #",
+   "Invoice Date",
+   "Amount",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "2866",
+  "title": "Receiver",
+  "section": "Ticketing",
+  "url": "pages/2866.html",
+  "text": "Receiver. Ticketing. Receipt #, Customer, Origin, Received By, Received Date, Status. inbound shipments, receiving goods, deliveries in, goods receipt, what arrived, receive shipments, receive inbound, record receipt, process receiver, receiver module, goods in",
+  "desc": "Record received shipments by receipt, customer, and date",
+  "cols": [
+   "Receipt #",
+   "Customer",
+   "Origin",
+   "Received By",
+   "Received Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "2868",
+  "title": "Shipper",
+  "section": "Ticketing",
+  "url": "pages/2868.html",
+  "text": "Shipper. Ticketing. Shipment #, Customer, Origin, Destination, Ship Date, Status. outbound shipments, sending goods, dispatch freight, bill of lading, ship out",
+  "desc": "Create shipment orders by customer, origin, and destination",
+  "cols": [
+   "Shipment #",
+   "Customer",
+   "Origin",
+   "Destination",
+   "Ship Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "2870",
+  "title": "Intercompany Shipper",
+  "section": "Ticketing",
+  "url": "pages/2870.html",
+  "text": "Intercompany Shipper. Ticketing. Shipment #, From Co., To Co., Item, Ship Date, Status. transfer between companies, outbound intercompany, internal transfer out, branch to branch shipment",
+  "desc": "Manage intercompany shipments by company, item, and ship date",
+  "cols": [
+   "Shipment #",
+   "From Co.",
+   "To Co.",
+   "Item",
+   "Ship Date",
+   "Status"
+  ],
+  "archetype": "list"
+ },
+ {
+  "id": "2872",
+  "title": "Intercompany Receiver",
+  "section": "Ticketing",
+  "url": "pages/2872.html",
+  "text": "Intercompany Receiver. Ticketing. Receipt #, From Co., To Co., Item, Received Date, Status. transfer between companies, inbound intercompany, internal transfer in, branch to branch receipt",
+  "desc": "Track intercompany receipts by source, destination, item, and status",
+  "cols": [
+   "Receipt #",
+   "From Co.",
+   "To Co.",
+   "Item",
+   "Received Date",
+   "Status"
+  ],
+  "archetype": "list"
+ }
+]

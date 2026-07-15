@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.pyc
+
+# Secrets. .env.example is committed as the template; .env never is.
+.env
+.env.*
+!.env.example
+
+# eval report is derived; eval/queries.json IS committed (it is the fixed test set)
+eval/report.json

@@ -1,0 +1,1242 @@
+/* =====================================================================
+   File: oprs.planner.css
+   Styles For: Planner V4 Dispatcher Board
+   Business Context: Drag-drop layout for assigning resources (employees,
+     trucks, trailers) to parent/child jobs. Provides job card layout,
+     resource tile panels, deployment-time hover toggles, Google Maps
+     info-window theming, modal dialog sizing, tooltip status colours,
+     AI auto-selection popover, and shift layout variants.
+   Related Files:
+     - Controls/OPRS/PlannerV4.aspx
+     - oprs.planner.js (companion JS)
+     - oprs.planner.mobile.css (mobile/touch overrides)
+     - oprs.plannerV5.css (V5 scoped successor)
+   ===================================================================== */
+
+/* --- Responsive Layout Shell --------------------------------------------- */
+@media (min-width: 1200px) {
+
+    .layout-menu-fixed .layout-horizontal .layout-page .menu-horizontal+[class*=container-],
+    .layout-menu-fixed-offcanvas .layout-horizontal .layout-page .menu-horizontal+[class*=container-] {
+        padding-top: 3.8rem !important;
+    }
+}
+
+.col-3 {
+    width: 35% !important;
+}
+
+@media (min-width: 992px) {
+
+    .container,
+    .container-fluid,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl {
+        padding-right: 1.875rem;
+        padding-left: 1.875rem;
+    }
+}
+
+.container-fluid {
+    padding-bottom: 0px !important;
+}
+
+.content-wrapper .container-p-y:not([class^=pt-]):not([class*=" pt-"]) {
+    padding-top: 0.15rem !important;
+    padding-bottom: 0px !important;
+}
+
+.breadcrumb-wrapper {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0px !important;
+}
+
+.breadcrumb-wrapper>a,
+.breadcrumb-wrapper>span {
+    display: none;
+}
+
+/* --- Header Action Buttons (Create Field Service / Sales Order / Work Order) */
+#btnCreateFieldService,
+#btnCreateSalesOrder,
+#btnCreateWorkOrder {
+    width: 100px;
+    font-size: 10px;
+    padding: 4.6px 8px;
+}
+
+#txtFromDate {
+    width: 126px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#txtToDate {
+    width: 127px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.bootstrap-select .dropdown-menu {
+    min-width: 250px;
+}
+
+.bootstrap-select .dropdown-menu ul {
+    margin-bottom: 0 !important;
+}
+
+.date-filter-buttons>div {
+    padding-right: 12px;
+}
+
+.date-filter-buttons>div>button {
+    width: 65px;
+    /*background: #e7ebef;*/
+    height: 24px;
+}
+
+.job-header-dropdown-filters {
+    margin-top: -22px;
+}
+
+.job-header-dropdown-filters>div>label,
+.job-header-dropdown-filters>div>button {
+    font-size: 10px !important;
+}
+
+.resource-header-dropdown-filters {
+    margin-top: -22px;
+}
+
+.resource-header-dropdown-filters>div>label,
+.resource-header-dropdown-filters>div>button {
+    font-size: 10px !important;
+}
+
+/* --- Job Card Body & Date Grouping --------------------------------------- */
+/* Each date group shows a count badge; cards are the parent/child job tiles  */
+.jobs-section-date-count {
+    /*background-color: #808080;*/
+    max-height: 50px;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 2px 4px rgba(38, 60, 85, 0.16);
+    border: 1px solid #f0f0f0;
+}
+
+.card-body-job-heading {
+    font-size: 12px;
+    width: 96%;
+}
+
+.card-body-job-menu-section {
+    padding-right: 45px;
+    padding-top: 17px;
+}
+
+.card-body-job-menu-section-button {
+    margin-left: -7px;
+    margin-top: -10px;
+}
+
+.card-body-job-subheading-section {
+    width: 510px;
+    margin-top: -20px;
+}
+
+.card-body-job-subheading {
+    font-size: 12px !important;
+    line-height: 21px;
+}
+
+.card-body-job-subheading>.badge-center {
+    height: 18px;
+    width: 18px;
+    font-size: 8px;
+    margin: 2px;
+    background-color: #69809a;
+    color: white;
+}
+
+.card-body-job {
+    font-size: 12px;
+}
+
+.parent-tile-row {
+    height: 100%;
+}
+
+.min-parent-tile-height {
+    min-height: 107px;
+}
+
+.job-resources>div {
+    min-height: 50px
+}
+
+.card-body-job-employee>.badge-center {
+    height: 14px;
+    width: 14px;
+}
+
+.nav-tabs .nav-link {
+    padding: 8px 12px;  /* Increased from 8px 10px to accommodate green circle */
+}
+
+/* --- Resource Tabs (Employee / Truck / Trailer / Equipment) -------------- */
+.employee-tab {
+    font-size: 12px;
+}
+
+.employee-tab-title {
+    margin-right: 0.9rem !important;
+}
+
+.employee-tab-title>.badge-center {
+    height: 29px;
+    width: 29px;
+    font-size: 10px;
+    margin: 2px;
+}
+
+.employee-tab-heading {
+    font-size: 12px;
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+.employee-tab-heading>.badge-center {
+    height: 14px;
+    width: 14px;
+}
+
+
+
+.truck-tab {
+    font-size: 12px;
+}
+
+.truck-tab-heading {
+    font-size: 12px;
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+.truck-tab-heading>.badge-center {
+    height: 14px;
+    width: 14px;
+}
+
+.equipments-tab-heading {
+    font-size: 12px;
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+.equipments-tab-heading>.badge-center {
+    height: 14px;
+    width: 14px;
+}
+
+.card-body-job-menu-items {
+    font-size: 12px;
+    padding: 4px 12px;
+    width: 175px !important;
+}
+
+.jobs-section-card {
+    height: calc(100vh - 318px);
+}
+
+.jobs-section {
+    max-height: calc(100vh - 340px);
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+
+
+.ddl-job-filter {
+    width: 100% !important;
+}
+
+.ddl-job-filter>button {
+    padding: 3px 21px 3px 5px !important;
+    font-size: 12px !important;
+    height: 25px;
+    width: 90% !important;
+}
+
+.ddl-resource-filter-availability>button {
+    padding: 3px 21px 3px 5px !important;
+    font-size: 12px !important;
+    height: 25px;
+    width: 95% !important;
+    margin-right: 10px
+}
+
+.ddl-resource-filter-facility {
+    width: 95% !important;
+}
+
+.ddl-resource-filter-facility>button {
+    padding: 3px 21px 3px 5px !important;
+    font-size: 12px !important;
+    height: 25px;
+    width: 98% !important;
+}
+
+
+/* --- Drag-and-Drop Placeholder (jQuery UI Sortable) ---------------------- */
+/* Red dotted border marks the drop target position during resource drag      */
+#placeholder {
+    border: 1px dotted red;
+    width: 146px !important;
+    height: 50px !important;
+    border-radius: 5px;
+}
+
+.child-jobs-employee>#placeholder {
+    width: 146px !important;
+    height: 50px !important;
+    border: 1px dotted red;
+    padding: 2px;
+}
+
+.child-jobs-truck>#placeholder,
+.resources-row-truck>#placeholder,
+.resources-row-unavailable-truck>#placeholder {
+    width: 146px !important;
+    height: 50px !important;
+    border: 1px dotted red;
+    padding: 2px;
+}
+
+.child-jobs-employee,
+.child-jobs-truck,
+.child-jobs-trailer {
+    display: flex;
+    justify-content: center;
+}
+
+.child-jobs-trailer>#placeholder,
+.resources-row-trailer>#placeholder,
+.resources-row-unavailable-trailer>#placeholder {
+    width: 146px !important;
+    height: 50px !important;
+    border: 1px dotted red;
+    padding: 2px;
+}
+
+#placeholder.list-item {
+    background-color: #ffffff;
+    color: #777;
+    float: left;
+}
+
+
+/* --- Resource Tile Containers (scrollable panels) ------------------------ */
+.resources-employee-tiles {
+    height: calc(100vh - 360px);
+    display: block;
+}
+
+.resources-truck-tiles {
+    height: calc(100vh - 360px);
+    display: block;
+}
+
+.resources-trailer-tiles {
+    height: calc(100vh - 360px);
+    display: block;
+}
+
+.resource-list-employee-tile {
+    width: 140px !important;
+    text-align: left;
+    height: 40px;
+    margin: auto;
+    float: left;
+    overflow: hidden;
+}
+
+
+.resource-list-truck-tile {
+    width: 140px !important;
+    text-align: left;
+    height: 40px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.resource-list-trailer-tile {
+    width: 140px !important;
+    text-align: left;
+    height: 40px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.ddl-status-filter {
+    width: 100px !important;
+}
+
+.ddl-status-filter>button {
+    padding: 3px 21px 3px 10px !important;
+    font-size: 12px !important;
+    height: 26px;
+    width: 100px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+    /*background: #e7ebef;*/
+}
+
+/*.ddl-status-filter > button:hover > div > div {
+            color: white !important;
+        }*/
+
+/*.light-style .bootstrap-select .filter-option-inner-inner:hover {
+    color: white !important;
+}
+
+.dropdown-toggle.show > div > div > div {
+    color: white !important;
+}*/
+/*.child-jobs-employee,
+.child-jobs-truck,
+.child-jobs-trailer {
+    min-height: 43px;
+    float: left;
+}*/
+/*.child-jobs-truck,
+.child-jobs-trailer {
+    width: 50%;
+}*/
+/*.child-jobs-truck,
+.child-jobs-trailer {
+    width: 25%;
+}*/
+.card-body-job>div>.dropdown-menu {
+    font-size: 12px !important;
+    width: 180px !important;
+}
+
+card-body-jobdate-menu {
+    font-size: 12px !important;
+    width: 100px !important;
+}
+
+.card-body-job>div>.dropdown-menu {
+    font-size: 12px !important;
+    width: 180px !important;
+}
+
+.bs-select-all,
+.bs-deselect-all {
+    width: 50%;
+    font-size: 12px;
+}
+
+.dropdown-item {
+    font-size: 12px;
+}
+
+.plantab {
+    height: calc(50vh - 204px);
+    overflow-y: auto;
+}
+
+.plannerTab {
+    height: calc(50vh - 140px);
+    overflow-y: auto;
+}
+
+.form-check-input {
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.hideElement {
+    display: none !important;
+}
+
+.k-window-titlebar .k-window-actions {
+    top: 73px !important;
+}
+
+.tabler-icons {
+    font-size: 15px;
+}
+
+/* --- Modal / Dialog Sizing ------------------------------------------------ */
+/* Various full-page and constrained modal dialogs for job operations        */
+#dialogbox .modal-dialog,
+.modal-content {
+    max-width: 96% !important;
+    max-height: 97% !important;
+    height: 97% !important;
+}
+
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 30px);
+    overflow-y: hidden;
+}
+
+.modal .modal-footer {
+    padding: 4px;
+}
+
+#commentDialog>.modal-dialog,
+#commentDialog>div>.modal-content {
+    max-width: 1400px !important;
+    max-height: 97% !important;
+    height: 97% !important;
+}
+
+#commentDialog>div>div>.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#divJobSummaryDialog>.modal-dialog,
+#divJobSummaryDialog>*>.modal-content {
+    max-width: 700px !important;
+    max-height: 97% !important;
+    height: 97% !important;
+}
+
+#divJobSummaryBody {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: scroll;
+}
+
+#divCopyChildWindowDialog>.modal-dialog,
+#divCopyChildWindowDialog>*>.modal-content {
+    max-width: 700px !important;
+    max-height: 72% !important;
+}
+
+#divCopyChildWindowBody {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#divDeploymentTimeWindowDialog>.modal-dialog,
+#divDeploymentTimeWindowDialog>*>.modal-content {
+    max-width: 700px !important;
+    max-height: 97% !important;
+    height: 60% !important;
+}
+
+#divDeploymentTimeWindowBody {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#divPushChildJobWindowDialog>.modal-dialog,
+#divPushChildJobWindowDialog>*>.modal-content {
+    max-width: 700px !important;
+    max-height: 97% !important;
+    height: 80% !important;
+}
+
+#divPushChildJobWindowBody {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+
+/* --- Deployment Time Hover Toggle ---------------------------------------- */
+/* Shows actual vs scheduled deployment time on hover                       */
+.child-job-deployment-time-actual-data {
+    display: block;
+}
+
+.child-job-deployment-time-data {
+    display: none;
+}
+
+.child-job-deployment-time-actual:hover .child-job-deployment-time-actual-data {
+    display: none;
+}
+
+.child-job-deployment-time-actual:hover .child-job-deployment-time-data {
+    display: block;
+}
+
+.conditional-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.conditional-hover .show-on-hover-out {
+    display: inline-block;
+}
+
+.conditional-hover .show-on-hover-in {
+    display: none;
+}
+
+.conditional-hover:hover .show-on-hover-out {
+    display: none;
+}
+
+.conditional-hover:hover .show-on-hover-in {
+    display: inline-block;
+}
+
+/* --- Blink Animation (urgent attention indicator) ------------------------ */
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+
+.child-jobs-ticket-deploymentTime {
+    width: 89px;
+    float: left;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #000000;
+    list-style-type: none;
+    margin: 5px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: move;
+    height: 30px;
+    white-space: nowrap;
+}
+
+
+.child-jobs-ticket-deploymentTime>.resources-list-deploymentTime {
+    margin: 0px;
+}
+
+.resources-list-deploymentTime {
+    width: 89px;
+    float: left;
+    box-sizing: border-box;
+    list-style-type: none;
+    margin: 7px 5px 5px 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: move;
+    cursor: pointer;
+    height: 28px;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hide_deploymenttime {
+    font-size: 0px !important;
+}
+
+.hide_deploymenttime_actual {
+    display: none;
+}
+
+
+.HideAction {
+    display: none !important;
+}
+
+.ShowAction {
+    display: block;
+}
+
+
+.bootstrap-select .dropdown-menu {
+    max-height: 200px;
+    /* Set a max height for the dropdown menu */
+}
+
+.modal-content {
+    margin: auto;
+}
+
+#footerBtn>div>button {
+    min-width: 90px;
+}
+
+#divDeploymentTimeWindowDialog>.modal-dialog>.modal-content {
+    width: 400px;
+}
+
+
+/* --- Google Maps Controls & Info Windows --------------------------------- */
+/* Custom map controls and themed info-window popups for resource/activity   */
+.gmap-control-container {
+    margin: 10px;
+}
+
+.gmap-control {
+    background: none padding-box rgb(255, 255, 255);
+    display: table-cell;
+    border: 0px;
+    margin: 0px;
+    padding: 0px 17px;
+    text-transform: none;
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    direction: ltr;
+    overflow: hidden;
+    text-align: center;
+    height: 38px;
+    vertical-align: middle;
+    color: rgb(0, 0, 0);
+    /*font-family: Roboto, Arial, sans-serif;*/
+    font-size: 18px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+    min-width: 36px;
+    font-weight: 500;
+}
+
+.gmap-control:hover {
+    border: 1px solid #678AC7;
+}
+
+.gmap-control-active {
+    background-color: -moz-linear-gradient(center top, #6D8ACC, #7B98D9);
+    background-color: #6D8ACC;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #678AC7;
+}
+
+.gmap-control-legend {
+    position: absolute;
+    text-align: left;
+    z-index: -1;
+    top: 35px;
+    right: 0;
+    width: 150px;
+    height: 76px;
+    font-size: 10px;
+    background: #FEFEFE;
+    border: 1px solid #A9BBDF;
+    padding: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.gmap-control-legend ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.gmap-control-legend li {
+    line-height: 160%;
+}
+
+.minwidth {
+    min-width: 1960px;
+}
+
+.minheight {
+    min-height: calc(100vh - 200px);
+}
+
+.minwidthControl {
+    min-width: 170px;
+}
+
+#resourceMap .gm-style-iw-d,
+#activityMap .gm-style-iw-d {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 7px 7px 7px 0px;
+    max-height: 250px !important;
+    scrollbar-width: thin;
+}
+
+#resourceMap .gm-style-iw,
+#activityMap .gm-style-iw {
+    color: #fff !important;
+    background-color: #69809ab5 !important;
+    border-color: #69809ab5 !important;
+    box-shadow: 0 .25rem 1rem rgba(147, 158, 170, .45) !important;
+    padding-left: 7px;
+    outline: none;
+}
+
+
+#resourceMap .gm-style-iw-tc::after,
+#activityMap .gm-style-iw-tc::after {
+    color: #fff !important;
+    background-color: #69809ab5 !important;
+}
+
+/* Default (arrow at bottom) */
+.gm-style-iw-tail-bottom::after {
+    top: auto;
+    bottom: -12px;
+    transform: rotate(0deg);
+}
+
+/* Flipped (arrow at top) */
+.gm-style-iw-tail-top::after {
+    top: -12px;
+    bottom: auto;
+    transform: rotate(180deg);
+}
+
+#resourceMap .gm-style-iw-chr,
+#activityMap .gm-style-iw-chr,
+#map .gm-style-iw-chr {
+    display: none !important;
+}
+
+
+.minheight-map {
+    min-height: calc(50vh - 140px);
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+#warningDialog>.modal-dialog,
+#warningDialog>div>.modal-content {
+    max-width: 900px !important;
+    max-height: 97% !important;
+    height: 90% !important;
+}
+
+#warningDialog>div>div>.modal-body {
+    /*100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#MaintancePopupDialog>.modal-dialog,
+#MaintancePopupDialog>div>.modal-content {
+    max-width: 95% !important;
+    max-height: 97% !important;
+    height: 96% !important;
+}
+
+
+.custom-tooltip .tooltip-top .tooltip-inner {
+    margin-bottom: 10px;
+}
+
+
+.custom-tooltip .tooltip-inner {
+    max-width: 400px;
+    /* Set a max width for the tooltip */
+    white-space: normal;
+    /* Allow the text to wrap to the next line */
+    word-wrap: break-word;
+    /* Break long words */
+    word-break: break-word;
+    /* Break words at the boundary */
+    overflow-wrap: break-word;
+    /* Ensure long unbroken strings wrap properly */
+}
+
+.custom-tooltip .tooltip {
+    width: auto;
+    /*max-width: 250px;*/
+    /* Enforce a maximum width */
+    white-space: normal;
+    /* Wrap text */
+}
+
+.custom-tooltip .tooltip.show {
+    white-space: normal;
+}
+
+.cursor-inherit {
+    cursor: inherit;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.min-height-300 {
+    min-height: 300px;
+}
+
+.resource-list-employee-tile-action,
+.resource-list-truck-tile-action,
+.resource-list-trailer-tile-action {
+    margin-bottom: 5px;
+    margin-right: 5px;
+    box-shadow: 0 2px 4px rgba(38, 60, 85, 0.16);
+    border-radius: 0.3125rem;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+}
+
+.resource-list-employee-tile,
+.resource-list-truck-tile,
+.resource-list-trailer-tile {
+    box-shadow: 0 2px 4px rgba(38, 60, 85, 0.16);
+    border-radius: 0.3125rem;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+}
+
+.text-truncate {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.bg-secondaryDarkJobDate>.card-body-job-subheading-section>.card-body-job-subheading>.badge {
+    background: #ffffff;
+    color: #69809a;
+}
+
+/* --- Shift Layout Variants ----------------------------------------------- */
+/* One-shift vs two-shift layouts control the width of the job section        */
+.right-main-section-oneshift {
+    /*max-width: 1056px;*/
+    flex-shrink: 0;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.right-main-section-twoshift {
+    /*max-width: 1300px;*/
+    flex-shrink: 0;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.right-side-btn-group {
+    display: flex;
+}
+
+.job-section-oneshift {
+    min-width: 1024px !important;
+}
+
+.job-section-twoshift {
+    min-width: 1276px !important;
+}
+
+#plannerV4Scope {
+    margin: 0 -18px 0 -23px;
+}
+
+/* Visual feedback when dragging a resource over the "new child job" area    */
+.highlight-drop-area.new-child-job {
+    box-shadow: #afc6f0 0px 1px 12px 0px;
+    border-radius: 5px;
+}
+
+.border-left {
+    border-left: 1px solid #d4d8dd;
+}
+
+.border-right {
+    border-right: 1px solid #d4d8dd;
+}
+
+.border-top {
+    border-top: 1px solid #d4d8dd;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d4d8dd;
+}
+
+.border-all {
+    border: 1px solid #d4d8dd;
+}
+
+/*changes the width of childjob employee,truck,trailer tiles to percentage based*/
+/*.child-jobs-employee > .resource-list-employee-tile, .child-jobs-truck > .resource-list-truck-tile, .child-jobs-trailer > .resource-list-trailer-tile {
+    width: 95% !important;
+}*/
+@media screen and (max-width: 1390px) {
+    .planner-footer-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .right-main-section {
+        padding-left: 0.8rem;
+        padding-right: 1rem;
+        margin-top: 10px;
+    }
+
+    .right-side-btn-group {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .date-filter-panel {
+        display: block !important;
+    }
+}
+
+.fa-truck-arrow-right {
+    height: 2.435em;
+    width: 2.435em;
+    padding: 0.4rem;
+}
+
+.fa-truck-arrow-right::before {
+    font-size: 0.85rem;
+}
+
+.second-child-mt-2:not(:first-child) {
+    margin-top: 6px !important;
+}
+
+.third-child-mt-2:not(:nth-child(1)):not(:nth-child(2)) {
+    margin-top: 6px !important;
+}
+
+/* --- Status Tooltip Colours ----------------------------------------------- */
+/* Tooltip background encodes resource/job health:                           */
+/*   palegreen = positive/available, palered = warning/issue                  */
+/*   darkgreen = confirmed good, darkred = critical/blocked                  */
+.palegreen .tooltip-inner {
+    background-color: #dff9ec;
+    color: #39da8a;
+    font-size: 80%;
+}
+
+.palegreen .tooltip-arrow {
+    --bs-tooltip-bg: #dff9ec;
+}
+
+.palered .tooltip-inner {
+    background-color: #ffe5e5;
+    color: #ff5b5c;
+    font-size: 80%;
+}
+
+.palered .tooltip-arrow {
+    --bs-tooltip-bg: #ffe5e5;
+}
+
+.darkgreen .tooltip-inner {
+    background-color: #39da8a;
+    color: #fff;
+    font-size: 80%;
+}
+
+.darkgreen .tooltip-arrow {
+    --bs-tooltip-bg: #39da8a;
+}
+
+.darkred .tooltip-inner {
+    background-color: #ff5b5c;
+    color: #fff;
+    font-size: 80%;
+}
+
+.darkred .tooltip-arrow {
+    --bs-tooltip-bg: #ff5b5c;
+}
+
+
+/* --- Email & Resource Popup Dialogs --------------------------------------- */
+#SendEmaill .modal-dialog,
+.modal-content {
+    max-width: 80% !important;
+    max-height: 97% !important;
+    height: 97% !important;
+}
+
+
+#ResourcePopupDialog .modal-dialog,
+.modal-content {
+    max-width: 99% !important;
+    width: 98% !important;
+    max-height: 95% !important;
+    height: 97% !important;
+    overflow: hidden;
+}
+
+#ResourcePopupDialog .container-fluid .flex-grow-1 .container-p-y {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.tdheight {
+    height: 50px;
+}
+
+.ManualEmailsText {
+    min-width: 400px;
+}
+
+.txtbox {
+    width: 90px;
+    text-align: right;
+    margin-left: 53px;
+}
+
+.tblBorder {
+    border: 1px solid #e4e6e9;
+}
+
+#txtEmailBody {
+    height: 500px;
+}
+
+.ti-md {
+    font-size: 1.15rem;
+}
+
+.ti {
+    display: inline-block !important;
+}
+
+.tooltip-inner {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip-inner i.ti {
+    margin-right: 2px;
+}
+
+#ddlAccountManager .dropdown-item {
+    font-size: 15px;
+}
+
+#fullPageItemsDialog>.modal-dialog,
+#fullPageItemsDialog>div>.modal-content {
+    max-width: 900px !important;
+    max-height: 97% !important;
+    height: 72% !important;
+}
+
+#fullPageItemsDialog>div>div>.modal-body {
+    /*100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#fullPageItemsChildDialog>.modal-dialog,
+#fullPageItemsChildDialog>div>.modal-content {
+    max-width: 930px !important;
+    max-height: 100% !important;
+    height: 77% !important;
+}
+
+#fullPageItemsChildDialog>div>div>.modal-body {
+    /*100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 68px);
+    overflow-y: hidden;
+}
+
+#fullPageItemsChildDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(97 119 144 / 36%);
+    z-index: 1000;
+    /* Higher than backdrop */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0.125rem 1.25rem 0 rgba(38, 60, 85, 0.6);
+}
+
+i.ti.ti-message.tabler-icons,
+i.ti.ti-message-x,
+i.ti.ti-message-star {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+
+.ml-25 {
+    margin-left: 25px;
+}
+
+/* --- AI Auto Selection Tooltip & Info Popover ----------------------------- */
+/* Styling for the AI-powered resource auto-selection feature                 */
+.AIToolTip .tooltip-inner {
+    text-align: left !important;
+    color: #495563 !important;
+    background: #f0f0f0 !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.AIToolTip[data-popper-placement=top] .tooltip-arrow::before {
+    border-top-color: #f0f0f0 !important;
+}
+
+/* AI Auto Selection Info — dedicated popup dialog */
+#aiInfoDialog>.modal-dialog,
+#aiInfoDialog>div>.modal-content {
+    max-width: 420px !important;
+    width: 420px !important;
+    height: auto !important;
+    max-height: 95vh !important;
+}
+
+#aiInfoDialog>div>div>.modal-body {
+    height: auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+#aiInfoDialog #iFrameAIInfo {
+    height: 280px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* AI info popover (replaces modal) */
+.ai-info-popover {
+    /* max-width: 420px !important;
+    width: 420px !important; */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.ai-info-popover .popover-body {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.ai-info-popover .popover-arrow {
+    display: block;
+}
+
+.ai-info-popover .container-fluid {
+    width: 100% !important;
+}
