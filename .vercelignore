@@ -1,3 +1,27 @@
-eval/
-node_modules/
+# What NOT to upload to the host.
+#
+# NOTE: no environment variables are needed on Vercel. The palette makes no LLM calls at
+# runtime -- the model is vendored and loaded locally (command-palette.js sets
+# allowRemoteModels = false). LLM_API_KEY is read only by generate_eval.js /
+# generate_descriptions.js, on a developer's machine. A key in the host's env would add
+# exposure and buy nothing.
+#
+# Do NOT add build_snapshots.py, generate_embeddings.js, ranking.js or package*.json here:
+# Vercel runs `npm run build`, which needs all four (generate_embeddings.js imports
+# ranking.js). Excluding them breaks the deploy.
+
+# Secrets. Also gitignored; belt and braces for CLI deploys, which do not read .gitignore.
 .env
+.env.*
+!.env.example
+
+node_modules/
+
+# Dev-only: the eval harness and its data. Not part of the build, not needed to serve the
+# site, and no reason to publish at https://<site>/generate_eval.js
+eval/
+generate_eval.js
+generate_descriptions.js
+
+# Local launcher; pointless on a served origin.
+Start Demo.bat
