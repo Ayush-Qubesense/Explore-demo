@@ -20,6 +20,10 @@
   --cmdp-kbd-bg: rgba(38, 60, 85, .06);
   --cmdp-chip-bg: rgba(234, 84, 85, .14);
   --cmdp-row-hit-bg: rgba(90, 141, 238, .10);
+  /* Section pill. Neutral on purpose: --cmdp-chip-bg is red because a status chip means
+     "filtered to Overdue"; a section is just where the page lives and must not shout. */
+  --cmdp-sec-bg: rgba(38, 60, 85, .08);
+  --cmdp-sec-fg: rgba(38, 60, 85, .65);
 }
 .dark-style {
   --cmdp-hover-bg: rgba(90, 141, 238, .20);
@@ -27,6 +31,8 @@
   --cmdp-kbd-bg: rgba(255, 255, 255, .07);
   --cmdp-chip-bg: rgba(234, 84, 85, .22);
   --cmdp-row-hit-bg: rgba(90, 141, 238, .18);
+  --cmdp-sec-bg: rgba(255, 255, 255, .09);
+  --cmdp-sec-fg: rgba(255, 255, 255, .60);
 }
 
 #cmdPaletteMenu {
@@ -131,17 +137,47 @@
   text-overflow: ellipsis;
 }
 .cmdp-item.active .cmdp-item-title { color: var(--bs-primary); }
-.cmdp-item-sub { font-size: .75rem; color: var(--bs-secondary-color); }
+/* The section is a TAG, not prose -- so make it an object, not just differently-sized text.
+ *
+ * This line and .cmdp-item-desc started as plain grey text 0.05rem apart, which read as
+ * one wrapped paragraph: nothing told the eye that "Accounting" and "Generate and track
+ * invoices..." are different KINDS of information. Uppercasing it helped and still wasn't
+ * enough -- both remained grey text on the same background, so they still scanned as a
+ * block. A filled pill is a shape; the eye separates it from a sentence pre-attentively,
+ * without reading either.
+ *
+ * align-self is load-bearing: .cmdp-item-body is a flex COLUMN, so without it the pill
+ * stretches to the full row width and stops looking like a tag at all. */
+.cmdp-item-sub {
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1.7;
+  padding: 0 .35rem;
+  margin: .15rem 0;
+  border-radius: .2rem;
+  background: var(--cmdp-sec-bg);
+  color: var(--cmdp-sec-fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-/* What the page is for. Sits below the section breadcrumb, quieter than it: the
-   hierarchy is title -> section -> description, so this must never compete with the
-   title for attention. One line only -- .cmdp-item-body is min-width:0, which is what
-   lets ellipsis work here instead of the row growing and shifting the ones below. */
+/* What the page is for: the only line in the row that reads as a sentence.
+ *
+ * Deliberately LARGER than the label above it. The visual hierarchy is title (which page)
+ * -> description (what it does) -> section (where it lives) -- the section is the least
+ * useful of the three when you are choosing between two similar titles, so it gets the
+ * quietest treatment despite sitting higher in the DOM.
+ *
+ * One line only: .cmdp-item-body is min-width:0, which is what lets ellipsis work here
+ * instead of the row growing and shifting every row below it. */
 .cmdp-item-desc {
-  font-size: .7rem;
+  font-size: .78rem;
+  line-height: 1.35;
   color: var(--bs-secondary-color);
-  opacity: .8;
-  margin-top: .1rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
