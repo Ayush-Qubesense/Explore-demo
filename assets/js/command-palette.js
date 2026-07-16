@@ -418,7 +418,11 @@
   // not from the live query (which is empty on the suggestion screen).
   function urlFor(entry, rule) {
     var url = SITE_ROOT + entry.url;
-    if (rule) url += (url.indexOf('?') === -1 ? '?' : '&') + rule.param + '=' + encodeURIComponent(rule.value);
+    // Filter deep-link suppressed here rather than at the two call sites (the row href
+    // and the Enter-key nav), so both stay suppressed together. Restore this line and
+    // the chip in render() to bring the whole feature back; applyDeepLink still honours
+    // a ?status= param that arrives by any other route.
+    // if (rule) url += (url.indexOf('?') === -1 ? '?' : '&') + rule.param + '=' + encodeURIComponent(rule.value);
     return url;
   }
 
@@ -580,10 +584,22 @@
       // score is there to prove ("this is ranked semantic matching, not a substring
       // filter") -- because a name hit IS a substring filter. Show the page ID instead;
       // it doubles as a hint that IDs are searchable.
-      var right = '';
-      if (r.name) right = '<span class="cmdp-badge">' + esc(r.entry.id) + '</span>';
-      else if (r.score != null) right = '<span class="cmdp-score">' + Math.round(r.score * 100) + '</span>';
-
+      /* Right-hand slot suppressed -- rows carry no number.
+       *
+       * It used to show the page ID on a name hit (1455) and Math.round(score * 100) on a
+       * semantic one (70). Both were internal detail leaking into a customer-facing demo:
+       * the ID is a filename, and the score only means anything if you know it is a cosine
+       * against MIN_SCORE = 0.25. The description line now carries the disambiguation the
+       * ID was doing by accident.
+       *
+       * Nothing behind this changed -- pins still outrank the meaning lane, IDs are still
+       * searchable (type "1455"), and r.score is still computed and still orders the list.
+       * To bring it back, restore the two lines below and re-add `right +` to the template.
+       *   if (r.name) right = '<span class="cmdp-badge">' + esc(r.entry.id) + '</span>';
+       *   else if (r.score != null) right = '<span class="cmdp-score">' + Math.round(r.score * 100) + '</span>';
+       *
+       * The one thing lost is the hint that IDs are searchable -- the `#` icon on a pinned
+       * row is now the only tell. */
       var icon = isQ ? 'bx-bulb' : (r.name ? 'bx-hash' : 'bx-file');
 
       return head +
@@ -594,7 +610,11 @@
             '<span class="cmdp-item-title">' + esc(r.entry.title) + '</span>' +
             (r.entry.section
               ? '<span class="cmdp-item-sub">' + esc(r.entry.section) +
-                (r.rule ? ' <span class="cmdp-chip">' + esc(r.rule.value) + '</span>' : '') + '</span>'
+                // Status chip suppressed, as is the deep-link it advertised (see urlFor).
+                // The rule is still matched and still stored with recents -- only these
+                // two output points are muted. Uncomment both to restore the feature.
+                // (r.rule ? ' <span class="cmdp-chip">' + esc(r.rule.value) + '</span>' : '') +
+                '</span>'
               : '') +
             // What the page is for, so the user can choose between two plausible titles
             // without opening both. Suggestion rows (kind === 'query') have no entry to
@@ -604,7 +624,6 @@
               ? '<span class="cmdp-item-desc">' + esc(r.entry.desc) + '</span>'
               : '') +
           '</span>' +
-          right +
         '</a>';
     }).join('');
 
